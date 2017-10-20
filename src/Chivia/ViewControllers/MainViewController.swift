@@ -6,6 +6,7 @@
 //  Copyright © 2017 Agustín Rodríguez. All rights reserved.
 //
 
+import Alamofire
 import MapboxDirections
 import MapboxNavigation
 import UIKit
@@ -15,6 +16,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        Alamofire
+            .request("http://localhost:3000/route?from=-56.164684,-34.913842&to=-56.201119,-34.907648")
+            .responseJSON { response in
+                if let json = response.result.value {
+                    print("JSON: \(json)")
+                }
+            }
         
         let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 38.9131752, longitude: -77.0324047), name: "Mapbox")
         let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 38.8977, longitude: -77.0365), name: "White House")
