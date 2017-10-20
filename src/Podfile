@@ -6,6 +6,7 @@ target 'Chivia' do
   use_frameworks!
 
   # Pods for Chivia
+  pod 'Alamofire', '~> 4.5'
   pod 'MapboxNavigation', '~> 0.9'
 
 end

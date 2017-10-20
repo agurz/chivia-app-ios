@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.1)
   - AWSCore (2.6.4)
   - AWSPolly (2.6.4):
     - AWSCore (= 2.6.4)
@@ -30,9 +31,11 @@ PODS:
   - Turf (0.0.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.5)
   - MapboxNavigation (~> 0.9)
 
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AWSCore: f5611be1c3edc38dbf9d6da0a5d2b6c4841d1c05
   AWSPolly: 698429ec5961663b565a25ee258d2e474bc7fa8d
   Mapbox-iOS-SDK: 47847dd44285477e0dfffd0130f65c8a52823ada
@@ -47,6 +50,6 @@ SPEC CHECKSUMS:
   Solar: ea092f7660c1b58d2b754227decb61a1c6710826
   Turf: 2089d59d12488de9cfa656634cce2c4e2dcbc691
 
-PODFILE CHECKSUM: 7d7f9b1033153d8ef2d8cddd74cd51c7bf6d15bc
+PODFILE CHECKSUM: 0e8794ad0fedda9621db7b33d488ef062eb48c78
 
 COCOAPODS: 1.3.1
