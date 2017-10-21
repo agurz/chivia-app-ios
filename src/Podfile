@@ -9,6 +9,8 @@ target 'Chivia' do
   pod 'Alamofire', '~> 4.5'
   pod 'Mapbox-iOS-SDK', '~> 3.6'
   pod 'MapboxNavigation', '~> 0.9'
+  pod 'PromiseKit', '~> 4.4'
+  pod 'SwiftyJSON'
   
   # Set Pods Swift version to 3.2
   post_install do |installer|

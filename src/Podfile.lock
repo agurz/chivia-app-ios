@@ -23,17 +23,31 @@ PODS:
   - OSRMTextInstructions (0.4.0):
     - MapboxDirections.swift (~> 0.10)
   - Polyline (4.1.1)
+  - PromiseKit (4.4.3):
+    - PromiseKit/Foundation (= 4.4.3)
+    - PromiseKit/QuartzCore (= 4.4.3)
+    - PromiseKit/UIKit (= 4.4.3)
+  - PromiseKit/CorePromise (4.4.3)
+  - PromiseKit/Foundation (4.4.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.4.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.4.3):
+    - PromiseKit/CorePromise
   - Pulley (1.4)
   - SDWebImage (4.1.2):
     - SDWebImage/Core (= 4.1.2)
   - SDWebImage/Core (4.1.2)
   - Solar (2.0.0)
+  - SwiftyJSON (3.1.4)
   - Turf (0.0.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - Mapbox-iOS-SDK (~> 3.6)
   - MapboxNavigation (~> 0.9)
+  - PromiseKit (~> 4.4)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -46,11 +60,13 @@ SPEC CHECKSUMS:
   MapboxNavigation: d99b6973ec4890ae4109a46dd41fb5cf23ad0a16
   OSRMTextInstructions: d8aa1d21310fd31bf256cf245b11b9a8e6413d63
   Polyline: 381d1e699fd12508f97cfc468478dfbab67edf1f
+  PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
   Pulley: 3d47a5ca819b8f35a63e9a4811d35035d484d1d9
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   Solar: ea092f7660c1b58d2b754227decb61a1c6710826
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Turf: 2089d59d12488de9cfa656634cce2c4e2dcbc691
 
-PODFILE CHECKSUM: 403d219843f32abf8a6f92061d2d2a0225fd0e8f
+PODFILE CHECKSUM: df203639d5430e04c6666a749508fdb45a9d8e85
 
 COCOAPODS: 1.3.1
