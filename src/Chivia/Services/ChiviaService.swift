@@ -13,6 +13,7 @@ class ChiviaService {
     let geocoding: GeocodingService
     let report: ReportService
     let route: RouteService
+    let stand: StandService
     
     private static var instance: ChiviaService?
     
@@ -20,6 +21,7 @@ class ChiviaService {
         geocoding = GeocodingService()
         report = ReportService()
         route = RouteService()
+        stand = StandService()
     }
     
     static func singleton() -> ChiviaService {

@@ -16,6 +16,8 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var routeView: UIView!
     
     private var mapViewHasLocatedUser = false
+    private var mapViewDestinationAnnotation: MGLPointAnnotation?
+    private var mapViewRouteAnnotation: MGLPolyline?
     
     private var destination: CLLocationCoordinate2D?
     private var route: Route?
@@ -24,6 +26,7 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mapViewSetup()
+        mapViewLoadStands()
     }
     
     private func mapViewSetup() {
@@ -48,6 +51,20 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         return 3
     }
     
+    func mapViewLoadStands() {
+        ChiviaService
+            .singleton()
+            .stand
+            .get()
+            .then {
+                $0.forEach({ stand in
+                    let annotation = MGLPointAnnotation()
+                    annotation.coordinate = stand.coordinate
+                    self.mapView.addAnnotation(annotation)
+                })
+            }
+    }
+    
     @IBAction func goButtonTouchUpInside(_ _: UIButton) {
         findAddressCoordinatesAndSetDestination(address: destinationTextField.text!)
         destinationTextField.endEditing(true)
@@ -66,14 +83,15 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
     private func setDestination(destination: CLLocationCoordinate2D) {
         self.destination = destination
         
-        if let annotations = mapView.annotations {
-            mapView.removeAnnotations(annotations)
+        if mapViewDestinationAnnotation == nil {
+            mapViewDestinationAnnotation = MGLPointAnnotation()
+            mapViewDestinationAnnotation!.coordinate = destination
+            mapView.addAnnotation(mapViewDestinationAnnotation!)
+        }
+        else {
+            mapViewDestinationAnnotation?.coordinate = destination
         }
         
-        let annotation = MGLPointAnnotation()
-        annotation.coordinate = destination
-        
-        mapView.addAnnotation(annotation)
         mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 92, left: 32, bottom: 282, right: 32)), animated: true)
         
         ChiviaService
@@ -88,7 +106,14 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
     private func setRoute(route: Route) {
         self.route = route
         
-        mapView.addAnnotation(MGLPolyline(coordinates: route.geometry, count: UInt(route.geometry.count)))
+        if mapViewRouteAnnotation == nil {
+            mapViewRouteAnnotation = MGLPolyline(coordinates: route.geometry, count: UInt(route.geometry.count))
+            mapView.addAnnotation(mapViewRouteAnnotation!)
+        }
+        else {
+            mapViewRouteAnnotation?.setCoordinates(UnsafeMutablePointer(mutating: route.geometry), count: UInt(route.geometry.count))
+        }
+        
         routeView.isHidden = false
     }
     
