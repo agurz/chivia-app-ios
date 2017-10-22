@@ -6,23 +6,19 @@
 //  Copyright © 2017 Agustín Rodríguez. All rights reserved.
 //
 
-import Alamofire
 import MapboxDirections
 import MapboxNavigation
-import PromiseKit
-import SwiftyJSON
-import UIKit
 
 class HomeViewController: UIViewController, MGLMapViewDelegate {
 
     @IBOutlet var mapView: MGLMapView!
-    @IBOutlet weak var whereAreYouGoingTextField: UITextField!
     @IBOutlet weak var routePreferencesView: UIView!
+    @IBOutlet weak var whereAreYouGoingTextField: UITextField!
     
-    var bestRoute: JSON?
-    var mapViewHasLocatedUser = false
-    var whereAreYouGoingLocation: CLLocationCoordinate2D?
-    var whereAreYouGoingPointAnnotation: MGLPointAnnotation?
+    private var mapViewHasLocatedUser = false
+    
+    private var destination: CLLocationCoordinate2D?
+    private var route: Route?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +26,7 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         mapViewSetup()
     }
     
-    func mapViewSetup() {
+    private func mapViewSetup() {
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.styleURL = MGLStyle.lightStyleURL()
@@ -49,130 +45,64 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
-        return 2
+        return 3
     }
     
-    func mapViewShowWhereAreYouGoingLocation() {
-        DispatchQueue.main.async {
-            if let annotations = self.mapView.annotations {
-                self.mapView.removeAnnotations(annotations)
-            }
-            
-            self.mapView.addAnnotation(self.whereAreYouGoingPointAnnotation!)
-            
-            self.mapView.setCamera(self.mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: self.mapView.userLocation!.coordinate, ne: self.whereAreYouGoingLocation!), edgePadding: UIEdgeInsets(top: 108, left: 32, bottom: 132, right: 32)), animated: true)
-        }
-    }
-    
-    func mapViewSetBestRoutePolyline(coordinates: [CLLocationCoordinate2D]) {
-        DispatchQueue.main.async {
-            self.mapView.addAnnotation(MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count)))
-            
-            self.routePreferencesView.isHidden = false
-        }
-    }
-    
-    @IBAction func goButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction func goButtonTouchUpInside(_ _: UIButton) {
+        findAddressCoordinatesAndSetDestination(address: whereAreYouGoingTextField.text!)
         whereAreYouGoingTextField.endEditing(true)
-        
-        if let address = whereAreYouGoingTextField.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
-            firstly {
-                self.geocodeAddress(address: address)
-            }
+    }
+    
+    private func findAddressCoordinatesAndSetDestination(address: String) {
+        ChiviaService
+            .singleton()
+            .geocoding
+            .get(address: address)
             .then {
-                self.setWhereAreYouGoingLocation(location: $0)
+                self.setDestination(destination: $0)
             }
-        }
     }
     
-    func geocodeAddress(address: String) -> Promise<CLLocationCoordinate2D> {
-        return Promise<CLLocationCoordinate2D> { fullfill, reject in
-            let geocodeServiceUrl = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC_LXnJZa7FXv_xsz8_WCL_4Ltt1MdExNU"
-            
-            Alamofire
-                .request("\(geocodeServiceUrl)&address=\(address)")
-                .responseJSON { response in
-                    if let data = response.data {
-                        let json = JSON(data: data)
-                        let location = json["results"][0]["geometry"]["location"]
-                        let lat = location["lat"].doubleValue
-                        let lng = location["lng"].doubleValue
-                        fullfill(CLLocationCoordinate2D(latitude: lat, longitude: lng))
-                    }
-                    else {
-                        print("Couldn't geocode address \(address)")
-                    }
-            }
-        }
-    }
-    
-    func setWhereAreYouGoingLocation(location: CLLocationCoordinate2D) {
-        whereAreYouGoingLocation = location
-        whereAreYouGoingPointAnnotation = MGLPointAnnotation()
-        whereAreYouGoingPointAnnotation?.coordinate = location
+    private func setDestination(destination: CLLocationCoordinate2D) {
+        self.destination = destination
         
-        mapViewShowWhereAreYouGoingLocation()
+        if let annotations = mapView.annotations {
+            mapView.removeAnnotations(annotations)
+        }
         
-        firstly {
-            self.findBestRouteToWhereAreYouGoingLocation()
-        }
-        .then {
-            self.mapViewSetBestRoutePolyline(coordinates: $0)
-        }
+        let annotation = MGLPointAnnotation()
+        annotation.coordinate = destination
+        
+        mapView.addAnnotation(annotation)
+        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 80, left: 32, bottom: 266, right: 32)), animated: true)
+        
+        ChiviaService
+            .singleton()
+            .route
+            .get(from: mapView!.userLocation!.coordinate, to: destination)
+            .then {
+                self.setRoute(route: $0)
+            }
     }
     
-    func findBestRouteToWhereAreYouGoingLocation() -> Promise<[CLLocationCoordinate2D]> {
-        return Promise<[CLLocationCoordinate2D]> { fullfill, reject in
-            let bestRouteServiceUrl = "https://601fc4fd.ngrok.io/route"
-            
-            let from = "\(mapView.userLocation!.coordinate.longitude),\(mapView.userLocation!.coordinate.latitude)"
-            let to = "\(whereAreYouGoingLocation!.longitude),\(whereAreYouGoingLocation!.latitude)"
-            
-            Alamofire
-                .request("\(bestRouteServiceUrl)?from=\(from)&to=\(to)")
-                .responseJSON { response in
-                    if let data = response.data {
-                        self.bestRoute = JSON(data: data)
-                        
-                        let geometry = self.bestRoute!["routes"][0]["geometry"].arrayValue
-                        var polylineCoordinates = [CLLocationCoordinate2D]()
-                        
-                        for point in geometry {
-                            polylineCoordinates.append(CLLocationCoordinate2D(latitude: point.arrayValue[0].doubleValue, longitude: point.arrayValue[1].doubleValue))
-                        }
-                        
-                        fullfill(polylineCoordinates)
-                    }
-            }
-        }
+    private func setRoute(route: Route) {
+        self.route = route
+        
+        mapView.addAnnotation(MGLPolyline(coordinates: route.geometry, count: UInt(route.geometry.count)))
+        routePreferencesView.isHidden = false
     }
     
-    @IBAction func navigateButtonTouchUpInside(_ sender: UIButton) {
-        if bestRoute != nil {
-            var waypoints = [Waypoint]()
-            
-            for waypoint in bestRoute!["waypoints"].arrayValue {
-                let lat = waypoint["location"][1].doubleValue
-                let lng = waypoint["location"][0].doubleValue
-                let waypointCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-                waypoints.append(Waypoint(coordinate: waypointCoordinate))
-            }
-            
-            let routeOptions = RouteOptions(waypoints: waypoints)
+    @IBAction func navigateButtonTouchUpInside(_ _: UIButton) {
+        if route != nil {
+            let routeOptions = RouteOptions(waypoints: route!.waypoints)
             routeOptions.includesSteps = true
             routeOptions.routeShapeResolution = .full
             
             Directions.shared.calculate(routeOptions) { (waypoints, routes, error) in
                 guard let route = routes?.first else { return }
-                self.presentNavigationViewController(route: route)
+                let navigationViewController = NavigationViewController(for: route)
+                self.present(navigationViewController, animated: true, completion: nil)
             }
-        }
-    }
-    
-    func presentNavigationViewController(route: Route) {
-        DispatchQueue.main.async {
-            let navigationViewController = NavigationViewController(for: route)
-            self.present(navigationViewController, animated: true, completion: nil)
         }
     }
     

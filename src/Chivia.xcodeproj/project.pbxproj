@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89B757B91F9C31A3008F14CD /* ChiviaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757B81F9C31A3008F14CD /* ChiviaService.swift */; };
+		89B757BC1F9C31BF008F14CD /* RouteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757BB1F9C31BF008F14CD /* RouteService.swift */; };
+		89B757BE1F9C31DD008F14CD /* GeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757BD1F9C31DD008F14CD /* GeocodingService.swift */; };
+		89B757C01F9C31FB008F14CD /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757BF1F9C31FB008F14CD /* ReportService.swift */; };
+		89B757C31F9C3432008F14CD /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757C21F9C3432008F14CD /* Route.swift */; };
 		89D8FF121F98417200657548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D8FF111F98417200657548 /* AppDelegate.swift */; };
 		89D8FF141F98417200657548 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D8FF131F98417200657548 /* HomeViewController.swift */; };
 		89D8FF171F98417200657548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF151F98417200657548 /* Main.storyboard */; };
@@ -18,6 +23,11 @@
 /* Begin PBXFileReference section */
 		4FB93925217C48601A7A7323 /* Pods-Chivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chivia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chivia/Pods-Chivia.release.xcconfig"; sourceTree = "<group>"; };
 		7D89651DAEAFB4D682DC6825 /* Pods_Chivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89B757B81F9C31A3008F14CD /* ChiviaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChiviaService.swift; sourceTree = "<group>"; };
+		89B757BB1F9C31BF008F14CD /* RouteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteService.swift; sourceTree = "<group>"; };
+		89B757BD1F9C31DD008F14CD /* GeocodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingService.swift; sourceTree = "<group>"; };
+		89B757BF1F9C31FB008F14CD /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		89B757C21F9C3432008F14CD /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		89D8FF0E1F98417200657548 /* Chivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D8FF111F98417200657548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D8FF131F98417200657548 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +75,34 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		89B757B71F9C318E008F14CD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				89B757C11F9C3428008F14CD /* Model */,
+				89B757BA1F9C31B4008F14CD /* Internal */,
+				89B757B81F9C31A3008F14CD /* ChiviaService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		89B757BA1F9C31B4008F14CD /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				89B757BB1F9C31BF008F14CD /* RouteService.swift */,
+				89B757BD1F9C31DD008F14CD /* GeocodingService.swift */,
+				89B757BF1F9C31FB008F14CD /* ReportService.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		89B757C11F9C3428008F14CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89B757C21F9C3432008F14CD /* Route.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		89D8FF051F98417200657548 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +124,7 @@
 		89D8FF101F98417200657548 /* Chivia */ = {
 			isa = PBXGroup;
 			children = (
+				89B757B71F9C318E008F14CD /* Services */,
 				89B336201F98EFCD00E0D094 /* ViewControllers */,
 				89D8FF111F98417200657548 /* AppDelegate.swift */,
 				89D8FF181F98417200657548 /* Assets.xcassets */,
@@ -257,8 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B757BE1F9C31DD008F14CD /* GeocodingService.swift in Sources */,
+				89B757C01F9C31FB008F14CD /* ReportService.swift in Sources */,
 				89D8FF141F98417200657548 /* HomeViewController.swift in Sources */,
+				89B757BC1F9C31BF008F14CD /* RouteService.swift in Sources */,
 				89D8FF121F98417200657548 /* AppDelegate.swift in Sources */,
+				89B757C31F9C3432008F14CD /* Route.swift in Sources */,
+				89B757B91F9C31A3008F14CD /* ChiviaService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
