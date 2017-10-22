@@ -12,6 +12,8 @@
 		89B757BE1F9C31DD008F14CD /* GeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757BD1F9C31DD008F14CD /* GeocodingService.swift */; };
 		89B757C01F9C31FB008F14CD /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757BF1F9C31FB008F14CD /* ReportService.swift */; };
 		89B757C31F9C3432008F14CD /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757C21F9C3432008F14CD /* Route.swift */; };
+		89B757C51F9CE5B5008F14CD /* StandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757C41F9CE5B5008F14CD /* StandService.swift */; };
+		89B757C71F9CE812008F14CD /* Stand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757C61F9CE812008F14CD /* Stand.swift */; };
 		89D8FF121F98417200657548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D8FF111F98417200657548 /* AppDelegate.swift */; };
 		89D8FF141F98417200657548 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D8FF131F98417200657548 /* HomeViewController.swift */; };
 		89D8FF171F98417200657548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF151F98417200657548 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		89B757BD1F9C31DD008F14CD /* GeocodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingService.swift; sourceTree = "<group>"; };
 		89B757BF1F9C31FB008F14CD /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		89B757C21F9C3432008F14CD /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		89B757C41F9CE5B5008F14CD /* StandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandService.swift; sourceTree = "<group>"; };
+		89B757C61F9CE812008F14CD /* Stand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stand.swift; sourceTree = "<group>"; };
 		89D8FF0E1F98417200657548 /* Chivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D8FF111F98417200657548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D8FF131F98417200657548 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				89B757BB1F9C31BF008F14CD /* RouteService.swift */,
 				89B757BD1F9C31DD008F14CD /* GeocodingService.swift */,
 				89B757BF1F9C31FB008F14CD /* ReportService.swift */,
+				89B757C41F9CE5B5008F14CD /* StandService.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				89B757C21F9C3432008F14CD /* Route.swift */,
+				89B757C61F9CE812008F14CD /* Stand.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B757C51F9CE5B5008F14CD /* StandService.swift in Sources */,
 				89B757BE1F9C31DD008F14CD /* GeocodingService.swift in Sources */,
 				89B757C01F9C31FB008F14CD /* ReportService.swift in Sources */,
 				89D8FF141F98417200657548 /* HomeViewController.swift in Sources */,
@@ -303,6 +310,7 @@
 				89D8FF121F98417200657548 /* AppDelegate.swift in Sources */,
 				89B757C31F9C3432008F14CD /* Route.swift in Sources */,
 				89B757B91F9C31A3008F14CD /* ChiviaService.swift in Sources */,
+				89B757C71F9CE812008F14CD /* Stand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,9 +11,9 @@ import MapboxNavigation
 
 class HomeViewController: UIViewController, MGLMapViewDelegate {
 
+    @IBOutlet weak var destinationTextField: UITextField!
     @IBOutlet var mapView: MGLMapView!
-    @IBOutlet weak var routePreferencesView: UIView!
-    @IBOutlet weak var whereAreYouGoingTextField: UITextField!
+    @IBOutlet weak var routeView: UIView!
     
     private var mapViewHasLocatedUser = false
     
@@ -49,8 +49,8 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
     }
     
     @IBAction func goButtonTouchUpInside(_ _: UIButton) {
-        findAddressCoordinatesAndSetDestination(address: whereAreYouGoingTextField.text!)
-        whereAreYouGoingTextField.endEditing(true)
+        findAddressCoordinatesAndSetDestination(address: destinationTextField.text!)
+        destinationTextField.endEditing(true)
     }
     
     private func findAddressCoordinatesAndSetDestination(address: String) {
@@ -74,7 +74,7 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         annotation.coordinate = destination
         
         mapView.addAnnotation(annotation)
-        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 80, left: 32, bottom: 266, right: 32)), animated: true)
+        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 92, left: 32, bottom: 282, right: 32)), animated: true)
         
         ChiviaService
             .singleton()
@@ -89,7 +89,7 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         self.route = route
         
         mapView.addAnnotation(MGLPolyline(coordinates: route.geometry, count: UInt(route.geometry.count)))
-        routePreferencesView.isHidden = false
+        routeView.isHidden = false
     }
     
     @IBAction func navigateButtonTouchUpInside(_ _: UIButton) {
