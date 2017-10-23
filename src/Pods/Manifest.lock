@@ -3,6 +3,7 @@ PODS:
   - AWSCore (2.6.4)
   - AWSPolly (2.6.4):
     - AWSCore (= 2.6.4)
+  - DynamicButton (5.0.0)
   - Mapbox-iOS-SDK (3.6.4)
   - MapboxCoreNavigation (0.9.0):
     - MapboxDirections.swift (~> 0.10.5)
@@ -44,6 +45,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - DynamicButton (~> 5.0.0)
   - Mapbox-iOS-SDK (~> 3.6)
   - MapboxNavigation (~> 0.9)
   - PromiseKit (~> 4.4)
@@ -53,6 +55,7 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AWSCore: f5611be1c3edc38dbf9d6da0a5d2b6c4841d1c05
   AWSPolly: 698429ec5961663b565a25ee258d2e474bc7fa8d
+  DynamicButton: 4c2fef968e4aa0a8a6ed7ca6b8a58c8e21a36cdc
   Mapbox-iOS-SDK: 47847dd44285477e0dfffd0130f65c8a52823ada
   MapboxCoreNavigation: 9cd3a9f11230414091acb822158a245137105b97
   MapboxDirections.swift: fbe95bd11c66339c1ef8b96301464f326394ac0d
@@ -67,6 +70,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Turf: 2089d59d12488de9cfa656634cce2c4e2dcbc691
 
-PODFILE CHECKSUM: df203639d5430e04c6666a749508fdb45a9d8e85
+PODFILE CHECKSUM: 7b248dbdba7c4b1dfe045814e536c2f7dd0ebfaa
 
 COCOAPODS: 1.3.1
