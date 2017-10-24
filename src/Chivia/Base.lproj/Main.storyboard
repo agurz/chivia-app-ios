@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTB-r4-lzZ" customClass="MGLMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTB-r4-lzZ" customClass="HomeMapView" customModule="Chivia" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -38,134 +38,33 @@
                                 </constraints>
                                 <state key="normal" title="Ir"/>
                                 <connections>
-                                    <action selector="goButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lVD-CM-Kph"/>
+                                    <action selector="findBestRouteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lVD-CM-Kph"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNQ-oB-UxX">
-                                <rect key="frame" x="8" y="357" width="359" height="221"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofh-z6-tI4">
-                                        <rect key="frame" x="305" y="8" width="48" height="48"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="Z3w-52-EVl"/>
-                                            <constraint firstAttribute="width" secondItem="Ofh-z6-tI4" secondAttribute="height" id="c7k-O7-rPB"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Nav"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="navigateButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mG0-zz-WI7"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEI-g3-zQc">
-                                        <rect key="frame" x="0.0" y="72" width="359" height="149"/>
-                                        <subviews>
-                                            <stackView contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="chI-l4-K1P">
-                                                <rect key="frame" x="8" y="8" width="343" height="133"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6W-uZ-OSq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evitar repechos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Al5-qz-JYT">
-                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="euw-Ou-iUk">
-                                                                <rect key="frame" x="294" y="0.0" width="51" height="31"/>
-                                                            </switch>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woA-zT-yU9">
-                                                        <rect key="frame" x="0.0" y="34" width="343" height="31"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evitar tráfico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKH-Kh-nKx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cu5-ve-V0E">
-                                                                <rect key="frame" x="294" y="0.0" width="51" height="31"/>
-                                                            </switch>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-kI-zMK">
-                                                        <rect key="frame" x="0.0" y="68" width="343" height="31"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evitar zonas peligrosas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUG-YR-zOf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7py-mc-lee">
-                                                                <rect key="frame" x="294" y="0.0" width="51" height="31"/>
-                                                            </switch>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixy-oP-E5v">
-                                                        <rect key="frame" x="0.0" y="102" width="343" height="31"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferir rutas populares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAz-zO-dWh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m29-j3-xKO">
-                                                                <rect key="frame" x="294" y="0.0" width="51" height="31"/>
-                                                            </switch>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="chI-l4-K1P" secondAttribute="bottom" constant="8" id="1my-fF-7XC"/>
-                                            <constraint firstAttribute="trailing" secondItem="chI-l4-K1P" secondAttribute="trailing" constant="8" id="6lU-bu-A9f"/>
-                                            <constraint firstItem="chI-l4-K1P" firstAttribute="top" secondItem="UEI-g3-zQc" secondAttribute="top" constant="8" id="Qfk-7a-RwH"/>
-                                            <constraint firstItem="chI-l4-K1P" firstAttribute="leading" secondItem="UEI-g3-zQc" secondAttribute="leading" constant="8" id="xxK-Wu-6Cv"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhZ-Ee-FOO">
+                                <rect key="frame" x="313" y="521" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Ofh-z6-tI4" secondAttribute="trailing" constant="6" id="7vn-U5-Kwu"/>
-                                    <constraint firstItem="Ofh-z6-tI4" firstAttribute="top" secondItem="tNQ-oB-UxX" secondAttribute="top" constant="8" id="DUf-6B-JIc"/>
-                                    <constraint firstAttribute="bottom" secondItem="UEI-g3-zQc" secondAttribute="bottom" id="RdN-m7-J1o"/>
-                                    <constraint firstItem="UEI-g3-zQc" firstAttribute="leading" secondItem="tNQ-oB-UxX" secondAttribute="leading" id="Tnu-Mn-D0s"/>
-                                    <constraint firstItem="UEI-g3-zQc" firstAttribute="top" secondItem="Ofh-z6-tI4" secondAttribute="bottom" constant="16" id="k3f-az-lcU"/>
-                                    <constraint firstAttribute="trailing" secondItem="UEI-g3-zQc" secondAttribute="trailing" id="mNd-ia-6Yw"/>
+                                    <constraint firstAttribute="height" constant="48" id="5Zc-lQ-k1f"/>
+                                    <constraint firstAttribute="width" secondItem="nhZ-Ee-FOO" secondAttribute="height" id="bQx-zl-KNB"/>
                                 </constraints>
-                            </view>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Report"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nhZ-Ee-FOO" secondAttribute="trailing" constant="14" id="BWc-7m-qsf"/>
                             <constraint firstItem="iTB-r4-lzZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ITR-aW-Wca"/>
                             <constraint firstItem="iTB-r4-lzZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PuZ-AF-PoA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zge-Mx-WIN" secondAttribute="trailing" constant="16" id="QnT-qo-ASd"/>
                             <constraint firstItem="zge-Mx-WIN" firstAttribute="height" secondItem="jD0-0Q-isn" secondAttribute="height" id="V4W-TL-Gfv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iTB-r4-lzZ" secondAttribute="bottom" id="Yas-hc-FVG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tNQ-oB-UxX" secondAttribute="bottom" constant="40" id="Ym9-gh-VoB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iTB-r4-lzZ" secondAttribute="trailing" id="YwR-K5-yJS"/>
                             <constraint firstItem="jD0-0Q-isn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gib-mt-Adg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jD0-0Q-isn" secondAttribute="trailing" constant="16" id="jfP-OH-BMD"/>
-                            <constraint firstItem="tNQ-oB-UxX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="lUZ-cU-hB1"/>
                             <constraint firstItem="jD0-0Q-isn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qiI-O4-tZX"/>
                             <constraint firstItem="zge-Mx-WIN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="smg-sr-y2h"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tNQ-oB-UxX" secondAttribute="trailing" constant="8" id="ssE-O5-MhU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -173,7 +72,7 @@
                     <connections>
                         <outlet property="destinationTextField" destination="jD0-0Q-isn" id="xbR-tS-Pj3"/>
                         <outlet property="mapView" destination="iTB-r4-lzZ" id="XhF-Cg-35A"/>
-                        <outlet property="routeView" destination="tNQ-oB-UxX" id="yiV-Nh-QjX"/>
+                        <outlet property="reportButton" destination="nhZ-Ee-FOO" id="NMN-2q-NUz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

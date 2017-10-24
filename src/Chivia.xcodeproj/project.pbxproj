@@ -19,6 +19,9 @@
 		89D8FF171F98417200657548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF151F98417200657548 /* Main.storyboard */; };
 		89D8FF191F98417200657548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF181F98417200657548 /* Assets.xcassets */; };
 		89D8FF1C1F98417200657548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF1A1F98417200657548 /* LaunchScreen.storyboard */; };
+		89E9B2F71F9EE2BC00A719C8 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9B2F61F9EE2BC00A719C8 /* HomeMapView.swift */; };
+		89E9B3011F9EE8F000A719C8 /* HomeMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */; };
+		89E9B3031F9EED2300A719C8 /* HomeMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */; };
 		9B8735AE7C504F88398E4F07 /* Pods_Chivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D89651DAEAFB4D682DC6825 /* Pods_Chivia.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,9 @@
 		89D8FF181F98417200657548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89D8FF1B1F98417200657548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D8FF1D1F98417200657548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E9B2F61F9EE2BC00A719C8 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapView.swift; sourceTree = "<group>"; };
+		89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMapView.xib; sourceTree = "<group>"; };
+		89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapViewDelegate.swift; sourceTree = "<group>"; };
 		DCBA15DB9D7820ECD233967F /* Pods-Chivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chivia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chivia/Pods-Chivia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				89B757B71F9C318E008F14CD /* Services */,
+				89E9B2FF1F9EE8E100A719C8 /* Views */,
 				89B336201F98EFCD00E0D094 /* ViewControllers */,
 				89D8FF111F98417200657548 /* AppDelegate.swift */,
 				89D8FF181F98417200657548 /* Assets.xcassets */,
@@ -139,6 +146,16 @@
 				89D8FF1D1F98417200657548 /* Info.plist */,
 			);
 			path = Chivia;
+			sourceTree = "<group>";
+		};
+		89E9B2FF1F9EE8E100A719C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */,
+				89E9B2F61F9EE2BC00A719C8 /* HomeMapView.swift */,
+				89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +222,7 @@
 			files = (
 				89D8FF1C1F98417200657548 /* LaunchScreen.storyboard in Resources */,
 				89D8FF191F98417200657548 /* Assets.xcassets in Resources */,
+				89E9B3011F9EE8F000A719C8 /* HomeMapView.xib in Resources */,
 				89D8FF171F98417200657548 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,8 +326,10 @@
 				89B757BE1F9C31DD008F14CD /* GeocodingService.swift in Sources */,
 				89B757C01F9C31FB008F14CD /* ReportService.swift in Sources */,
 				89D8FF141F98417200657548 /* HomeViewController.swift in Sources */,
+				89E9B3031F9EED2300A719C8 /* HomeMapViewDelegate.swift in Sources */,
 				89B757BC1F9C31BF008F14CD /* RouteService.swift in Sources */,
 				89D8FF121F98417200657548 /* AppDelegate.swift in Sources */,
+				89E9B2F71F9EE2BC00A719C8 /* HomeMapView.swift in Sources */,
 				89B757C31F9C3432008F14CD /* Route.swift in Sources */,
 				89B757B91F9C31A3008F14CD /* ChiviaService.swift in Sources */,
 				89B757C71F9CE812008F14CD /* Stand.swift in Sources */,
