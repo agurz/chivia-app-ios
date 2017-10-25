@@ -24,6 +24,8 @@
 	<true/>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoiYWd1cm9kcmlndWV6IiwiYSI6ImNpaXdjMWpzcTAwMDN1bm00Mm0wZDhwNzkifQ.u44IBf_aP5YVogy7kCJVHA</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

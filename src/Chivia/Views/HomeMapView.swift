@@ -35,6 +35,7 @@ class HomeMapView : UIView, MGLMapViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        mapView.attributionButton.isHidden = true
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.styleURL = MGLStyle.lightStyleURL()

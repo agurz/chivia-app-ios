@@ -32,7 +32,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zge-Mx-WIN">
-                                <rect key="frame" x="311" y="36" width="48" height="48"/>
+                                <rect key="frame" x="319" y="36" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zge-Mx-WIN" secondAttribute="height" id="EGe-Gw-qPD"/>
                                 </constraints>
@@ -41,27 +41,39 @@
                                     <action selector="findBestRouteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lVD-CM-Kph"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhZ-Ee-FOO">
-                                <rect key="frame" x="313" y="306" width="48" height="48"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MK3-YH-sgm" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="307" y="298" width="56" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="5Zc-lQ-k1f"/>
-                                    <constraint firstAttribute="width" secondItem="nhZ-Ee-FOO" secondAttribute="height" id="bQx-zl-KNB"/>
+                                    <constraint firstAttribute="height" constant="56" id="DCF-dg-DzP"/>
+                                    <constraint firstAttribute="width" secondItem="MK3-YH-sgm" secondAttribute="height" id="Jvz-cD-LZa"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Report"/>
-                            </button>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="fa"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="flag"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftIconFontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nhZ-Ee-FOO" secondAttribute="trailing" constant="14" id="BWc-7m-qsf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MK3-YH-sgm" secondAttribute="trailing" constant="12" id="D0h-sW-8Je"/>
                             <constraint firstItem="iTB-r4-lzZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ITR-aW-Wca"/>
                             <constraint firstItem="iTB-r4-lzZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PuZ-AF-PoA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zge-Mx-WIN" secondAttribute="trailing" constant="16" id="QnT-qo-ASd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zge-Mx-WIN" secondAttribute="trailing" constant="8" id="QnT-qo-ASd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MK3-YH-sgm" secondAttribute="bottom" constant="264" id="Qua-OU-SWf"/>
                             <constraint firstItem="zge-Mx-WIN" firstAttribute="height" secondItem="jD0-0Q-isn" secondAttribute="height" id="V4W-TL-Gfv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iTB-r4-lzZ" secondAttribute="bottom" id="Yas-hc-FVG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iTB-r4-lzZ" secondAttribute="trailing" id="YwR-K5-yJS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nhZ-Ee-FOO" secondAttribute="bottom" constant="264" id="gUi-x6-vrm"/>
                             <constraint firstItem="jD0-0Q-isn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gib-mt-Adg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jD0-0Q-isn" secondAttribute="trailing" constant="16" id="jfP-OH-BMD"/>
                             <constraint firstItem="jD0-0Q-isn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qiI-O4-tZX"/>
@@ -73,8 +85,8 @@
                     <connections>
                         <outlet property="destinationTextField" destination="jD0-0Q-isn" id="xbR-tS-Pj3"/>
                         <outlet property="homeMapView" destination="iTB-r4-lzZ" id="XhF-Cg-35A"/>
-                        <outlet property="reportButton" destination="nhZ-Ee-FOO" id="NMN-2q-NUz"/>
-                        <outlet property="reportButtonConstraint" destination="gUi-x6-vrm" id="50N-z5-9Ef"/>
+                        <outlet property="reportButton" destination="MK3-YH-sgm" id="Ldx-aG-TPb"/>
+                        <outlet property="reportButtonConstraint" destination="Qua-OU-SWf" id="ZmC-tJ-aKX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

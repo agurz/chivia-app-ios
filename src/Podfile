@@ -7,7 +7,7 @@ target 'Chivia' do
 
   # Pods for Chivia
   pod 'Alamofire', '~> 4.5'
-  pod 'DynamicButton', '~> 5.0.0'
+  pod 'LGButton'
   pod 'Mapbox-iOS-SDK', '~> 3.6'
   pod 'MapboxNavigation', '~> 0.9'
   pod 'PromiseKit', '~> 4.4'
@@ -16,8 +16,10 @@ target 'Chivia' do
   # Set Pods Swift version to 3.2
   post_install do |installer|
       installer.pods_project.targets.each do |target|
-          target.build_configurations.each do |config|
-              config.build_settings['SWIFT_VERSION'] = '3.2'
+          if not ['LGButton'].include?(target.name)
+              target.build_configurations.each do |config|
+                  config.build_settings['SWIFT_VERSION'] = '3.2'
+              end
           end
       end
   end

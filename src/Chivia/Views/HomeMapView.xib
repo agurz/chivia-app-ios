@@ -23,14 +23,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utW-gv-Osg" customClass="MGLMapView">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNG-me-hBb">
-                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <rect key="frame" x="8" y="627" width="359" height="0.0"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGt-dV-4jc">
-                            <rect key="frame" x="321" y="8" width="48" height="48"/>
+                            <rect key="frame" x="305" y="8" width="48" height="48"/>
                             <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="SGZ-jx-2HX"/>
@@ -44,65 +44,65 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug">
-                            <rect key="frame" x="0.0" y="72" width="375" height="149"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug">
+                            <rect key="frame" x="0.0" y="72" width="359" height="149"/>
                             <subviews>
                                 <stackView contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-rw-tu7">
-                                    <rect key="frame" x="8" y="8" width="359" height="133"/>
+                                    <rect key="frame" x="8" y="8" width="343" height="133"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rzu-s1-vhp">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evitar repechos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pV9-Mk-hfd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ju6-Ku-cHl">
-                                                    <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                    <rect key="frame" x="294" y="0.0" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90x-ee-iXe">
-                                            <rect key="frame" x="0.0" y="34" width="359" height="31"/>
+                                            <rect key="frame" x="0.0" y="34" width="343" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evitar tráfico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-vZ-0bC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ak-K3-Rlz">
-                                                    <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                    <rect key="frame" x="294" y="0.0" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaB-H7-87T">
-                                            <rect key="frame" x="0.0" y="68" width="359" height="31"/>
+                                            <rect key="frame" x="0.0" y="68" width="343" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evitar zonas peligrosas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OC-ey-LXG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tVc-Sd-fsa">
-                                                    <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                    <rect key="frame" x="294" y="0.0" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zj-TQ-PQ2">
-                                            <rect key="frame" x="0.0" y="102" width="359" height="31"/>
+                                            <rect key="frame" x="0.0" y="102" width="343" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferir rutas populares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zh2-GH-22s">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NdQ-oe-hGS">
-                                                    <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                    <rect key="frame" x="294" y="0.0" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                         </stackView>

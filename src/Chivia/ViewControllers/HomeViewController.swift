@@ -6,7 +6,7 @@
 //  Copyright © 2017 Agustín Rodríguez. All rights reserved.
 //
 
-import DynamicButton
+import LGButton
 import MapboxDirections
 import MapboxNavigation
 
@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
 
     @IBOutlet var destinationTextField: UITextField!
     @IBOutlet var homeMapView: HomeMapView!
-    @IBOutlet var reportButton: UIButton!
+    @IBOutlet var reportButton: LGButton!
     @IBOutlet var reportButtonConstraint: NSLayoutConstraint!
     
     private var reportButtonConstraintDefaultConstant: CGFloat = 0.0
@@ -35,13 +35,15 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
     }
     
     public func homeMapView(homeMapView: HomeMapView, routePreferencesPanel opened: Bool) {
-        reportButtonConstraint.constant = opened ? reportButtonConstraintDefaultConstant : 0.0
+        reportButtonConstraint.constant = opened ? reportButtonConstraintDefaultConstant : 12.0
         
     }
     
     private func reportButtonSetup() {
+        
+        
         reportButtonConstraintDefaultConstant = reportButtonConstraint.constant
-        reportButtonConstraint.constant = 0
+        reportButtonConstraint.constant = 12.0
     }
     
     @IBAction func findBestRouteButton(_ _: UIButton) {
