@@ -135,7 +135,7 @@ class HomeMapView : UIView, MGLMapViewDelegate {
             Directions.shared.calculate(routeOptions) { (waypoints, routes, error) in
                 guard let route = routes?.first else { return }
                 
-                self.inputViewController?.present(NavigationViewController(for: route), animated: true, completion: nil)
+                self.delegate?.homeMapView(homeMapView: self, routeReadyForNavigation: route)
             }
         }
     }

@@ -36,12 +36,13 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
     
     public func homeMapView(homeMapView: HomeMapView, routePreferencesPanel opened: Bool) {
         reportButtonConstraint.constant = opened ? reportButtonConstraintDefaultConstant : 12.0
-        
+    }
+    
+    public func homeMapView(homeMapView: HomeMapView, routeReadyForNavigation route: MapboxDirections.Route) {
+        present(NavigationViewController(for: route), animated: true, completion: nil)
     }
     
     private func reportButtonSetup() {
-        
-        
         reportButtonConstraintDefaultConstant = reportButtonConstraint.constant
         reportButtonConstraint.constant = 12.0
     }
