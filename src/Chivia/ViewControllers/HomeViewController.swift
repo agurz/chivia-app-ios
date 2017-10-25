@@ -49,7 +49,13 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
     
     @IBAction func findBestRouteButton(_ _: UIButton) {
         destinationTextField.endEditing(true)
-        findAddressCoordinatesAndSetDestination(address: destinationTextField.text!)
+        
+        if !destinationTextField.text!.isEmpty {
+            findAddressCoordinatesAndSetDestination(address: destinationTextField.text!)
+        }
+        else {
+            homeMapView.setDestination(destination: nil)
+        }
     }
     
     private func findAddressCoordinatesAndSetDestination(address: String) {

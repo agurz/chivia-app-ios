@@ -79,43 +79,65 @@ class HomeMapView : UIView, MGLMapViewDelegate {
         }
     }
     
-    public func setDestination(destination: CLLocationCoordinate2D) {
+    public func setDestination(destination: CLLocationCoordinate2D?) {
         self.destination = destination
         
-        if mapViewDestinationAnnotation == nil {
-            mapViewDestinationAnnotation = MGLPointAnnotation()
-            mapViewDestinationAnnotation!.coordinate = destination
-            mapView.addAnnotation(mapViewDestinationAnnotation!)
+        if destination != nil {
+            if mapViewDestinationAnnotation == nil {
+                mapViewDestinationAnnotation = MGLPointAnnotation()
+                mapViewDestinationAnnotation!.coordinate = destination!
+                mapView.addAnnotation(mapViewDestinationAnnotation!)
+            }
+            else {
+                mapViewDestinationAnnotation?.coordinate = destination!
+            }
+            
+            mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination!), edgePadding: UIEdgeInsets(top: 110, left: 32, bottom: 256, right: 32)), animated: true)
+            
+            ChiviaService
+                .singleton()
+                .route
+                .get(from: mapView.userLocation!.coordinate, to: destination!)
+                .then {
+                    self.setRoute(route: $0)
+                }
         }
         else {
-            mapViewDestinationAnnotation?.coordinate = destination
-        }
-        
-        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 110, left: 32, bottom: 256, right: 32)), animated: true)
-        
-        ChiviaService
-            .singleton()
-            .route
-            .get(from: mapView.userLocation!.coordinate, to: destination)
-            .then {
-                self.setRoute(route: $0)
+            if mapViewDestinationAnnotation != nil {
+                mapView.removeAnnotation(mapViewDestinationAnnotation!)
+                mapViewDestinationAnnotation = nil
             }
+            
+            mapView.setCenter(mapView.userLocation!.coordinate, zoomLevel: mapView.zoomLevel, direction: mapView.direction, animated: true, completionHandler: nil)
+            
+            setRoute(route: nil)
+        }
     }
     
-    private func setRoute(route: Route) {
+    private func setRoute(route: Route?) {
         self.route = route
         
-        if mapViewRouteAnnotation == nil {
-            mapViewRouteAnnotation = MGLPolyline(coordinates: route.geometry, count: UInt(route.geometry.count))
-            mapView.addAnnotation(mapViewRouteAnnotation!)
+        if route != nil {
+            if mapViewRouteAnnotation == nil {
+                mapViewRouteAnnotation = MGLPolyline(coordinates: route!.geometry, count: UInt(route!.geometry.count))
+                mapView.addAnnotation(mapViewRouteAnnotation!)
+            }
+            else {
+                mapViewRouteAnnotation?.setCoordinates(UnsafeMutablePointer(mutating: route!.geometry), count: UInt(route!.geometry.count))
+            }
+            
+            openRoutePreferencesPanel()
+            
+            delegate?.homeMapView(homeMapView: self, routeDetected: route!)
         }
         else {
-            mapViewRouteAnnotation?.setCoordinates(UnsafeMutablePointer(mutating: route.geometry), count: UInt(route.geometry.count))
+            if mapViewRouteAnnotation != nil {
+                mapView.removeAnnotation(mapViewRouteAnnotation!)
+                mapViewRouteAnnotation = nil
+            }
+            
+            closeRoutePreferencesPanel()
         }
-        
-        openRoutePreferencesPanel()
-        
-        delegate?.homeMapView(homeMapView: self, routeDetected: route)
     }
     
     private func openRoutePreferencesPanel() {
@@ -124,6 +146,12 @@ class HomeMapView : UIView, MGLMapViewDelegate {
         }
         
         delegate?.homeMapView(homeMapView: self, routePreferencesPanel: true)
+    }
+    
+    private func closeRoutePreferencesPanel() {
+        zeroHeightConstraint.isActive = true
+        
+        delegate?.homeMapView(homeMapView: self, routePreferencesPanel: false)
     }
     
     @IBAction func navigateButton(_ sender: UIView) {
