@@ -41,8 +41,8 @@
                                     <action selector="findBestRouteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lVD-CM-Kph"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhZ-Ee-FOO">
-                                <rect key="frame" x="313" y="521" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhZ-Ee-FOO">
+                                <rect key="frame" x="313" y="306" width="48" height="48"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="5Zc-lQ-k1f"/>
@@ -61,6 +61,7 @@
                             <constraint firstItem="zge-Mx-WIN" firstAttribute="height" secondItem="jD0-0Q-isn" secondAttribute="height" id="V4W-TL-Gfv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iTB-r4-lzZ" secondAttribute="bottom" id="Yas-hc-FVG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iTB-r4-lzZ" secondAttribute="trailing" id="YwR-K5-yJS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nhZ-Ee-FOO" secondAttribute="bottom" constant="264" id="gUi-x6-vrm"/>
                             <constraint firstItem="jD0-0Q-isn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gib-mt-Adg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jD0-0Q-isn" secondAttribute="trailing" constant="16" id="jfP-OH-BMD"/>
                             <constraint firstItem="jD0-0Q-isn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qiI-O4-tZX"/>
@@ -71,8 +72,9 @@
                     <tabBarItem key="tabBarItem" title="Home" id="MCG-kF-sli"/>
                     <connections>
                         <outlet property="destinationTextField" destination="jD0-0Q-isn" id="xbR-tS-Pj3"/>
-                        <outlet property="mapView" destination="iTB-r4-lzZ" id="XhF-Cg-35A"/>
+                        <outlet property="homeMapView" destination="iTB-r4-lzZ" id="XhF-Cg-35A"/>
                         <outlet property="reportButton" destination="nhZ-Ee-FOO" id="NMN-2q-NUz"/>
+                        <outlet property="reportButtonConstraint" destination="gUi-x6-vrm" id="50N-z5-9Ef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

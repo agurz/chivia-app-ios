@@ -10,23 +10,38 @@ import DynamicButton
 import MapboxDirections
 import MapboxNavigation
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeMapViewDelegate {
 
     @IBOutlet var destinationTextField: UITextField!
-    @IBOutlet var mapView: HomeMapView!
+    @IBOutlet var homeMapView: HomeMapView!
     @IBOutlet var reportButton: UIButton!
+    @IBOutlet var reportButtonConstraint: NSLayoutConstraint!
+    
+    private var reportButtonConstraintDefaultConstant: CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        mapViewSetup()
+        homeMapViewSetup()
         reportButtonSetup()
     }
     
-    private func mapViewSetup() {
+    private func homeMapViewSetup() {
+        homeMapView.delegate = self
+    }
+    
+    public func homeMapView(homeMapView: HomeMapView, routeDetected route: Route) {
+        //
+    }
+    
+    public func homeMapView(homeMapView: HomeMapView, routePreferencesPanel opened: Bool) {
+        reportButtonConstraint.constant = opened ? reportButtonConstraintDefaultConstant : 0.0
+        
     }
     
     private func reportButtonSetup() {
+        reportButtonConstraintDefaultConstant = reportButtonConstraint.constant
+        reportButtonConstraint.constant = 0
     }
     
     @IBAction func findBestRouteButton(_ _: UIButton) {
@@ -40,7 +55,7 @@ class HomeViewController: UIViewController {
             .geocoding
             .get(address: address)
             .then {
-                self.mapView.setDestination(destination: $0)
+                self.homeMapView.setDestination(destination: $0)
             }
     }
     

@@ -12,8 +12,8 @@ import MapboxNavigation
 class HomeMapView : UIView, MGLMapViewDelegate {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var mapView: MGLMapView!
-    @IBOutlet weak var zeroHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var mapView: MGLMapView!
+    @IBOutlet var zeroHeightConstraint: NSLayoutConstraint!
     
     private var mapViewHasLocatedUser = false
     private var mapViewDestinationAnnotation: MGLPointAnnotation?
@@ -90,7 +90,7 @@ class HomeMapView : UIView, MGLMapViewDelegate {
             mapViewDestinationAnnotation?.coordinate = destination
         }
         
-        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 86, left: 32, bottom: 248, right: 32)), animated: true)
+        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 110, left: 32, bottom: 256, right: 32)), animated: true)
         
         ChiviaService
             .singleton()
@@ -112,9 +112,17 @@ class HomeMapView : UIView, MGLMapViewDelegate {
             mapViewRouteAnnotation?.setCoordinates(UnsafeMutablePointer(mutating: route.geometry), count: UInt(route.geometry.count))
         }
         
-        zeroHeightConstraint.isActive = false
+        openRoutePreferencesPanel()
         
         delegate?.homeMapView(homeMapView: self, routeDetected: route)
+    }
+    
+    private func openRoutePreferencesPanel() {
+        if zeroHeightConstraint.isActive {
+            zeroHeightConstraint.isActive = false
+        }
+        
+        delegate?.homeMapView(homeMapView: self, routePreferencesPanel: true)
     }
     
     @IBAction func navigateButton(_ sender: UIButton) {

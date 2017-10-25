@@ -6,10 +6,10 @@
 //  Copyright © 2017 Agustín Rodríguez. All rights reserved.
 //
 
-import Foundation
-
 protocol HomeMapViewDelegate {
     
     func homeMapView(homeMapView: HomeMapView, routeDetected route: Route)
+    
+    func homeMapView(homeMapView: HomeMapView, routePreferencesPanel opened: Bool)
     
 }
