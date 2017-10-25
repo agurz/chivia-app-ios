@@ -27,25 +27,35 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNG-me-hBb">
-                    <rect key="frame" x="8" y="627" width="359" height="0.0"/>
+                    <rect key="frame" x="8" y="398" width="359" height="229"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGt-dV-4jc">
-                            <rect key="frame" x="305" y="8" width="48" height="48"/>
-                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1r-Zu-ega" customClass="LGButton" customModule="LGButton">
+                            <rect key="frame" x="299" y="8" width="56" height="56"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="48" id="SGZ-jx-2HX"/>
-                                <constraint firstAttribute="width" secondItem="qGt-dV-4jc" secondAttribute="height" id="wFm-va-ImP"/>
+                                <constraint firstAttribute="height" constant="56" id="7Em-ts-cNU"/>
+                                <constraint firstAttribute="width" secondItem="o1r-Zu-ega" secondAttribute="height" id="mIj-hx-axk"/>
                             </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" title="Nav"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="24"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="fa"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="play"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="leftIconFontSize">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
-                        </button>
+                            <connections>
+                                <action selector="navigateButton:" destination="-1" eventType="touchUpInside" id="eZT-i9-PeY"/>
+                            </connections>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug">
-                            <rect key="frame" x="0.0" y="72" width="359" height="149"/>
+                            <rect key="frame" x="0.0" y="80" width="359" height="149"/>
                             <subviews>
                                 <stackView contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-rw-tu7">
                                     <rect key="frame" x="8" y="8" width="343" height="133"/>
@@ -125,12 +135,12 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="hrj-Ec-Oug" firstAttribute="leading" secondItem="eNG-me-hBb" secondAttribute="leading" id="3Hh-fX-uEY"/>
+                        <constraint firstItem="s1W-si-spt" firstAttribute="trailing" secondItem="o1r-Zu-ega" secondAttribute="trailing" constant="4" id="AnN-Ld-CXs"/>
                         <constraint firstAttribute="bottom" secondItem="hrj-Ec-Oug" secondAttribute="bottom" id="DT4-Fh-NGa"/>
                         <constraint firstAttribute="height" id="Dye-SQ-5VC"/>
                         <constraint firstAttribute="trailing" secondItem="hrj-Ec-Oug" secondAttribute="trailing" id="VlT-my-iTi"/>
-                        <constraint firstItem="hrj-Ec-Oug" firstAttribute="top" secondItem="qGt-dV-4jc" secondAttribute="bottom" constant="16" id="Zfe-Il-rbh"/>
-                        <constraint firstAttribute="trailing" secondItem="qGt-dV-4jc" secondAttribute="trailing" constant="6" id="d7Z-tl-90z"/>
-                        <constraint firstItem="qGt-dV-4jc" firstAttribute="top" secondItem="eNG-me-hBb" secondAttribute="top" constant="8" id="yBg-Kg-fzl"/>
+                        <constraint firstItem="hrj-Ec-Oug" firstAttribute="top" secondItem="o1r-Zu-ega" secondAttribute="bottom" constant="16" id="Yaf-7f-RGi"/>
+                        <constraint firstItem="o1r-Zu-ega" firstAttribute="top" secondItem="s1W-si-spt" secondAttribute="top" constant="8" id="dqw-jZ-K2I"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="s1W-si-spt"/>
                 </view>
@@ -145,6 +155,7 @@
                 <constraint firstItem="eNG-me-hBb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="yBG-SW-dOR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="32.5" y="67.5"/>
         </view>
     </objects>
 </document>

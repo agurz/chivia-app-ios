@@ -126,7 +126,7 @@ class HomeMapView : UIView, MGLMapViewDelegate {
         delegate?.homeMapView(homeMapView: self, routePreferencesPanel: true)
     }
     
-    @IBAction func navigateButton(_ sender: UIButton) {
+    @IBAction func navigateButton(_ sender: UIView) {
         if route != nil {
             let routeOptions = RouteOptions(waypoints: route!.waypoints)
             routeOptions.includesSteps = true
