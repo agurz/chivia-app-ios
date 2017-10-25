@@ -83,61 +83,77 @@ class HomeMapView : UIView, MGLMapViewDelegate {
         self.destination = destination
         
         if destination != nil {
-            if mapViewDestinationAnnotation == nil {
-                mapViewDestinationAnnotation = MGLPointAnnotation()
-                mapViewDestinationAnnotation!.coordinate = destination!
-                mapView.addAnnotation(mapViewDestinationAnnotation!)
-            }
-            else {
-                mapViewDestinationAnnotation?.coordinate = destination!
-            }
-            
-            mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination!), edgePadding: UIEdgeInsets(top: 110, left: 32, bottom: 256, right: 32)), animated: true)
-            
-            ChiviaService
-                .singleton()
-                .route
-                .get(from: mapView.userLocation!.coordinate, to: destination!)
-                .then {
-                    self.setRoute(route: $0)
-                }
+            setDestinationToValue(destination: destination!)
         }
         else {
-            if mapViewDestinationAnnotation != nil {
-                mapView.removeAnnotation(mapViewDestinationAnnotation!)
-                mapViewDestinationAnnotation = nil
-            }
-            
-            mapView.setCenter(mapView.userLocation!.coordinate, zoomLevel: mapView.zoomLevel, direction: mapView.direction, animated: true, completionHandler: nil)
-            
-            setRoute(route: nil)
+            setDestinationToNil()
         }
+    }
+    
+    private func setDestinationToValue(destination: CLLocationCoordinate2D) {
+        if mapViewDestinationAnnotation == nil {
+            mapViewDestinationAnnotation = MGLPointAnnotation()
+            mapViewDestinationAnnotation!.coordinate = destination
+            mapView.addAnnotation(mapViewDestinationAnnotation!)
+        }
+        else {
+            mapViewDestinationAnnotation?.coordinate = destination
+        }
+        
+        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 110, left: 32, bottom: 256, right: 32)), animated: true)
+        
+        ChiviaService
+            .singleton()
+            .route
+            .get(from: mapView.userLocation!.coordinate, to: destination)
+            .then {
+                self.setRoute(route: $0)
+            }
+    }
+    
+    private func setDestinationToNil() {
+        if mapViewDestinationAnnotation != nil {
+            mapView.removeAnnotation(mapViewDestinationAnnotation!)
+            mapViewDestinationAnnotation = nil
+        }
+        
+        mapView.setCenter(mapView.userLocation!.coordinate, zoomLevel: mapView.zoomLevel, direction: mapView.direction, animated: true, completionHandler: nil)
+        
+        setRoute(route: nil)
     }
     
     private func setRoute(route: Route?) {
         self.route = route
         
         if route != nil {
-            if mapViewRouteAnnotation == nil {
-                mapViewRouteAnnotation = MGLPolyline(coordinates: route!.geometry, count: UInt(route!.geometry.count))
-                mapView.addAnnotation(mapViewRouteAnnotation!)
-            }
-            else {
-                mapViewRouteAnnotation?.setCoordinates(UnsafeMutablePointer(mutating: route!.geometry), count: UInt(route!.geometry.count))
-            }
-            
-            openRoutePreferencesPanel()
-            
-            delegate?.homeMapView(homeMapView: self, routeDetected: route!)
+            setRouteToValue(route: route!)
         }
         else {
-            if mapViewRouteAnnotation != nil {
-                mapView.removeAnnotation(mapViewRouteAnnotation!)
-                mapViewRouteAnnotation = nil
-            }
-            
-            closeRoutePreferencesPanel()
+            setRouteToNil()
         }
+    }
+    
+    private func setRouteToValue(route: Route) {
+        if mapViewRouteAnnotation == nil {
+            mapViewRouteAnnotation = MGLPolyline(coordinates: route.geometry, count: UInt(route.geometry.count))
+            mapView.addAnnotation(mapViewRouteAnnotation!)
+        }
+        else {
+            mapViewRouteAnnotation?.setCoordinates(UnsafeMutablePointer(mutating: route.geometry), count: UInt(route.geometry.count))
+        }
+        
+        openRoutePreferencesPanel()
+        
+        delegate?.homeMapView(homeMapView: self, routeDetected: route)
+    }
+    
+    private func setRouteToNil() {
+        if mapViewRouteAnnotation != nil {
+            mapView.removeAnnotation(mapViewRouteAnnotation!)
+            mapViewRouteAnnotation = nil
+        }
+        
+        closeRoutePreferencesPanel()
     }
     
     private func openRoutePreferencesPanel() {
@@ -167,4 +183,5 @@ class HomeMapView : UIView, MGLMapViewDelegate {
             }
         }
     }
+    
 }
