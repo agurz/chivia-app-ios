@@ -8,5 +8,8 @@ La app para el ciclista uruguayo
 
 ## Funcionalidades
 
-- [ ] Cómo ir de un lugar a otro
+Con Chiviá podrás:
 
+- [x] Saber cuál es la mejor ruta para ir de un lugar a otro en bici
+- [x] Saber dónde están los bicicletarios de Montevideo
+- [ ] Reportar incidentes (Calles rotas, robos, etc) en la ciudad
