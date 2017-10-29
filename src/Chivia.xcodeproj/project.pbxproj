@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		89AEDD931FA029950009AFDC /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AEDD921FA029950009AFDC /* ReportViewController.swift */; };
-		89B6C0821FA6345E00AEC098 /* ReportCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B6C0811FA6345E00AEC098 /* ReportCollectionViewCell.xib */; };
-		89B6C0841FA6346A00AEC098 /* ReportCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6C0831FA6346A00AEC098 /* ReportCollectionViewCell.swift */; };
+		89AEDD931FA029950009AFDC /* ReportTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */; };
+		89B6C0821FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */; };
+		89B6C0841FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */; };
 		89B6C0871FA64D5000AEC098 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6C0861FA64D5000AEC098 /* UIColor.swift */; };
 		89B757B91F9C31A3008F14CD /* ChiviaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757B81F9C31A3008F14CD /* ChiviaService.swift */; };
 		89B757BC1F9C31BF008F14CD /* RouteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B757BB1F9C31BF008F14CD /* RouteService.swift */; };
@@ -26,15 +26,16 @@
 		89E9B2F71F9EE2BC00A719C8 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9B2F61F9EE2BC00A719C8 /* HomeMapView.swift */; };
 		89E9B3011F9EE8F000A719C8 /* HomeMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */; };
 		89E9B3031F9EED2300A719C8 /* HomeMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */; };
+		89FF7EA81FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FF7EA71FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift */; };
 		9B8735AE7C504F88398E4F07 /* Pods_Chivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D89651DAEAFB4D682DC6825 /* Pods_Chivia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4FB93925217C48601A7A7323 /* Pods-Chivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chivia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chivia/Pods-Chivia.release.xcconfig"; sourceTree = "<group>"; };
 		7D89651DAEAFB4D682DC6825 /* Pods_Chivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89AEDD921FA029950009AFDC /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
-		89B6C0811FA6345E00AEC098 /* ReportCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportCollectionViewCell.xib; sourceTree = "<group>"; };
-		89B6C0831FA6346A00AEC098 /* ReportCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCollectionViewCell.swift; sourceTree = "<group>"; };
+		89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeViewController.swift; sourceTree = "<group>"; };
+		89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		89B6C0861FA64D5000AEC098 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		89B757B81F9C31A3008F14CD /* ChiviaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChiviaService.swift; sourceTree = "<group>"; };
 		89B757BB1F9C31BF008F14CD /* RouteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteService.swift; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		89E9B2F61F9EE2BC00A719C8 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapView.swift; sourceTree = "<group>"; };
 		89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMapView.xib; sourceTree = "<group>"; };
 		89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapViewDelegate.swift; sourceTree = "<group>"; };
+		89FF7EA71FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		DCBA15DB9D7820ECD233967F /* Pods-Chivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chivia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chivia/Pods-Chivia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				89D8FF131F98417200657548 /* HomeViewController.swift */,
-				89AEDD921FA029950009AFDC /* ReportViewController.swift */,
+				89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -172,8 +174,9 @@
 				89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */,
 				89E9B2F61F9EE2BC00A719C8 /* HomeMapView.swift */,
 				89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */,
-				89B6C0811FA6345E00AEC098 /* ReportCollectionViewCell.xib */,
-				89B6C0831FA6346A00AEC098 /* ReportCollectionViewCell.swift */,
+				89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */,
+				89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */,
+				89FF7EA71FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,7 +245,7 @@
 			files = (
 				89D8FF1C1F98417200657548 /* LaunchScreen.storyboard in Resources */,
 				89D8FF191F98417200657548 /* Assets.xcassets in Resources */,
-				89B6C0821FA6345E00AEC098 /* ReportCollectionViewCell.xib in Resources */,
+				89B6C0821FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib in Resources */,
 				89E9B3011F9EE8F000A719C8 /* HomeMapView.xib in Resources */,
 				89D8FF171F98417200657548 /* Main.storyboard in Resources */,
 			);
@@ -349,15 +352,16 @@
 			files = (
 				89B757C51F9CE5B5008F14CD /* StandService.swift in Sources */,
 				89B6C0871FA64D5000AEC098 /* UIColor.swift in Sources */,
+				89FF7EA81FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift in Sources */,
 				89B757BE1F9C31DD008F14CD /* GeocodingService.swift in Sources */,
 				89B757C01F9C31FB008F14CD /* ReportService.swift in Sources */,
 				89D8FF141F98417200657548 /* HomeViewController.swift in Sources */,
 				89E9B3031F9EED2300A719C8 /* HomeMapViewDelegate.swift in Sources */,
-				89B6C0841FA6346A00AEC098 /* ReportCollectionViewCell.swift in Sources */,
+				89B6C0841FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift in Sources */,
 				89B757BC1F9C31BF008F14CD /* RouteService.swift in Sources */,
 				89D8FF121F98417200657548 /* AppDelegate.swift in Sources */,
 				89E9B2F71F9EE2BC00A719C8 /* HomeMapView.swift in Sources */,
-				89AEDD931FA029950009AFDC /* ReportViewController.swift in Sources */,
+				89AEDD931FA029950009AFDC /* ReportTypeViewController.swift in Sources */,
 				89B757C31F9C3432008F14CD /* Route.swift in Sources */,
 				89B757B91F9C31A3008F14CD /* ChiviaService.swift in Sources */,
 				89B757C71F9CE812008F14CD /* Stand.swift in Sources */,

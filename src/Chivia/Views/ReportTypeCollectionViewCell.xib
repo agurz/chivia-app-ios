@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportCollectionViewCell" customModule="Chivia" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportTypeCollectionViewCell" customModule="Chivia" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="TRe-8p-T8O" id="GR9-ba-9cI"/>
                 <outlet property="label" destination="krb-pM-xZe" id="XDN-IV-CAs"/>
@@ -43,6 +43,9 @@
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="button:" destination="-1" eventType="touchUpInside" id="etL-5a-AqV"/>
+                    </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krb-pM-xZe">
                     <rect key="frame" x="6" y="395" width="363" height="20.5"/>

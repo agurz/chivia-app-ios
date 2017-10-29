@@ -70,15 +70,13 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
     }
     
     @IBAction func reportButton(_ _: UIView) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let reportViewController = storyBoard.instantiateViewController(withIdentifier: "ReportViewController")
+        let reportTypeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportTypeViewController")
+        let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportTypeViewController)
         
-        let formSheetViewController = MZFormSheetPresentationViewController(contentViewController: reportViewController)
-        
-        formSheetViewController.presentationController?.contentViewSize = CGSize(width: 394, height: 276)
+        sheetViewController.presentationController?.contentViewSize = CGSize(width: 394, height: 276)
         //formSheetViewController.presentationController?.shouldApplyBackgroundBlurEffect = true
         
-        present(formSheetViewController, animated: true, completion: nil)
+        present(sheetViewController, animated: true, completion: nil)
     }
     
 }

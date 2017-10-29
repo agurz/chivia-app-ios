@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReportViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ReportTypeCollectionViewCellDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var closeButton: UIButton!
@@ -36,14 +36,24 @@ class ReportViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     internal func collectionView(_ _: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReportCollectionViewCell", for: indexPath) as! ReportCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReportTypeCollectionViewCell", for: indexPath) as! ReportTypeCollectionViewCell
+        cell.delegate = self
         cell.button.bgColor = UIColor.init(hex: collectionData[indexPath.row]["color"]!)
         cell.button.leftIconString = collectionData[indexPath.row]["icon"]!
         cell.label.text = collectionData[indexPath.row]["title"]!
         return cell
     }
+    
+    internal func reportTypeCollectionViewCell(clicked reportCollectionViewCell: ReportTypeCollectionViewCell) {
+        /*let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController")
+        let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportViewController)
+        
+        sheetViewController.presentationController?.contentViewSize = CGSize(width: 394, height: 276)
+        
+        present(sheetViewController, animated: true, completion: nil)*/
+    }
 
-    @IBAction func closeButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction func closeButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     

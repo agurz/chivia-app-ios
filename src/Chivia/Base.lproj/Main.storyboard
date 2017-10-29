@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="-146" y="-24"/>
         </scene>
-        <!--Report View Controller-->
+        <!--Report Type View Controller-->
         <scene sceneID="Opt-C2-r49">
             <objects>
-                <viewController storyboardIdentifier="ReportViewController" id="Xl7-fT-NPm" customClass="ReportViewController" customModule="Chivia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReportTypeViewController" id="Xl7-fT-NPm" customClass="ReportTypeViewController" customModule="Chivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FFt-is-K54">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReportCollectionViewCell" id="BTp-cb-U7s" customClass="ReportCollectionViewCell" customModule="Chivia" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReportTypeCollectionViewCell" id="BTp-cb-U7s" customClass="ReportTypeCollectionViewCell" customModule="Chivia" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="152"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -133,7 +133,7 @@
                                         </constraints>
                                         <state key="normal" title="Cerrar"/>
                                         <connections>
-                                            <action selector="closeButtonTouchUpInside:" destination="Xl7-fT-NPm" eventType="touchUpInside" id="6F8-Ml-cBh"/>
+                                            <action selector="closeButton:" destination="Xl7-fT-NPm" eventType="touchUpInside" id="6F8-Ml-cBh"/>
                                         </connections>
                                     </button>
                                 </subviews>
