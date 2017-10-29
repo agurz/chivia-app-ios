@@ -9,6 +9,7 @@
 import LGButton
 import MapboxDirections
 import MapboxNavigation
+import MZFormSheetPresentationController
 
 class HomeViewController: UIViewController, HomeMapViewDelegate {
 
@@ -66,6 +67,17 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
             .then {
                 self.homeMapView.setDestination(destination: $0)
             }
+    }
+    
+    @IBAction func reportButton(_ _: UIView) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let reportViewController = storyBoard.instantiateViewController(withIdentifier: "ReportViewController")
+        
+        let formSheetViewController = MZFormSheetPresentationViewController(contentViewController: reportViewController)
+        
+        formSheetViewController.presentationController?.contentViewSize = CGSize(width: 312, height: 276)
+        
+        present(formSheetViewController, animated: true, completion: nil)
     }
     
 }

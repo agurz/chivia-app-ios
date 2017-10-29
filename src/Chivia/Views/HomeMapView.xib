@@ -12,8 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeMapView" customModule="Chivia" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="vWV-9f-Zax"/>
                 <outlet property="mapView" destination="utW-gv-Osg" id="ezy-zR-QKE"/>
+                <outlet property="view" destination="iN0-l3-epB" id="vWV-9f-Zax"/>
                 <outlet property="zeroHeightConstraint" destination="Dye-SQ-5VC" id="CM0-I2-Owb"/>
             </connections>
         </placeholder>
@@ -27,7 +27,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNG-me-hBb">
-                    <rect key="frame" x="8" y="398" width="359" height="229"/>
+                    <rect key="frame" x="8" y="627" width="359" height="0.0"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1r-Zu-ega" customClass="LGButton" customModule="LGButton">
                             <rect key="frame" x="299" y="8" width="56" height="56"/>

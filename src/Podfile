@@ -10,6 +10,7 @@ target 'Chivia' do
   pod 'LGButton'
   pod 'Mapbox-iOS-SDK', '~> 3.6'
   pod 'MapboxNavigation', '~> 0.9'
+  pod 'MZFormSheetPresentationController'
   pod 'PromiseKit', '~> 4.4'
   pod 'SwiftyJSON'
   

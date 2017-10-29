@@ -11,7 +11,8 @@ import MapboxNavigation
 
 class HomeMapView : UIView, MGLMapViewDelegate {
     
-    @IBOutlet var contentView: UIView!
+    @IBOutlet var view: UIView!
+    
     @IBOutlet var mapView: MGLMapView!
     @IBOutlet var zeroHeightConstraint: NSLayoutConstraint!
     
@@ -27,9 +28,9 @@ class HomeMapView : UIView, MGLMapViewDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         Bundle.main.loadNibNamed("HomeMapView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(view)
+        view.frame = self.bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     override func awakeFromNib() {
