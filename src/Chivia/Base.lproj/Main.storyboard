@@ -103,37 +103,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wft-2q-Qxy">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3qu-Zx-nRf">
                                 <rect key="frame" x="32" y="52" width="311" height="583"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="yPM-Ur-XBu">
-                                    <size key="itemSize" width="104" height="152"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReportCollectionViewCell" id="BTp-cb-U7s" customClass="ReportCollectionViewCell" customModule="Chivia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="152"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="104" height="152"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wft-2q-Qxy">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="535"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="yPM-Ur-XBu">
+                                            <size key="itemSize" width="104" height="152"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReportCollectionViewCell" id="BTp-cb-U7s" customClass="ReportCollectionViewCell" customModule="Chivia" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="152"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="152"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kay-fC-1ix">
+                                        <rect key="frame" x="0.0" y="541" width="311" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="E5n-rR-sPB"/>
+                                        </constraints>
+                                        <state key="normal" title="Cerrar"/>
+                                        <connections>
+                                            <action selector="closeButtonTouchUpInside:" destination="Xl7-fT-NPm" eventType="touchUpInside" id="6F8-Ml-cBh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wft-2q-Qxy" firstAttribute="leading" secondItem="y7Q-Yj-enn" secondAttribute="leading" constant="32" id="3jf-2R-mGA"/>
-                            <constraint firstItem="wft-2q-Qxy" firstAttribute="top" secondItem="y7Q-Yj-enn" secondAttribute="top" constant="32" id="JIY-Bx-wk4"/>
-                            <constraint firstItem="y7Q-Yj-enn" firstAttribute="trailing" secondItem="wft-2q-Qxy" secondAttribute="trailing" constant="32" id="UM9-BH-021"/>
-                            <constraint firstItem="y7Q-Yj-enn" firstAttribute="bottom" secondItem="wft-2q-Qxy" secondAttribute="bottom" constant="32" id="Xy1-oj-jtU"/>
+                            <constraint firstItem="y7Q-Yj-enn" firstAttribute="trailing" secondItem="3qu-Zx-nRf" secondAttribute="trailing" constant="32" id="F4q-V3-2fP"/>
+                            <constraint firstItem="y7Q-Yj-enn" firstAttribute="bottom" secondItem="3qu-Zx-nRf" secondAttribute="bottom" constant="32" id="NC5-j6-dqg"/>
+                            <constraint firstItem="3qu-Zx-nRf" firstAttribute="leading" secondItem="y7Q-Yj-enn" secondAttribute="leading" constant="32" id="Z28-G6-L6R"/>
+                            <constraint firstItem="3qu-Zx-nRf" firstAttribute="top" secondItem="y7Q-Yj-enn" secondAttribute="top" constant="32" id="gHp-IL-Ye4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y7Q-Yj-enn"/>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="kay-fC-1ix" id="RJV-2H-d7c"/>
                         <outlet property="collectionView" destination="wft-2q-Qxy" id="MnI-0P-ZbZ"/>
                     </connections>
                 </viewController>

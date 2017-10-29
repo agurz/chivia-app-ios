@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRe-8p-T8O" customClass="LGButton" customModule="LGButton">
-                    <rect key="frame" x="6" y="162" width="363" height="363"/>
+                    <rect key="frame" x="6" y="26" width="363" height="363"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="TRe-8p-T8O" secondAttribute="height" multiplier="1:1" id="S4W-Gt-6eU"/>
@@ -45,7 +45,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krb-pM-xZe">
-                    <rect key="frame" x="6" y="531" width="363" height="130"/>
+                    <rect key="frame" x="6" y="395" width="363" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

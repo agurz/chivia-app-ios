@@ -11,6 +11,7 @@ import UIKit
 class ReportViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var closeButton: UIButton!
     
     private var collectionData: [[String:String]] = [
         ["title": "Incidente", "icon": "alert", "color": "#e52b50"],
@@ -42,4 +43,8 @@ class ReportViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
     }
 
+    @IBAction func closeButtonTouchUpInside(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
