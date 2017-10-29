@@ -13,8 +13,9 @@ class ReportViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var collectionData: [[String:String]] = [
-        ["title": "Peligro!", "icon": "warning", "color": "#f34567"],
-        ["title": "Peligro!", "icon": "warning", "color": "#f34567"],
+        ["title": "Incidente", "icon": "alert", "color": "#e52b50"],
+        ["title": "Incidente en el mapa", "icon": "issue-opened", "color": "#ffbf00"],
+        ["title": "Robo", "icon": "bug", "color": "#a52a2a"]
     ]
     
     override func viewDidLoad() {
@@ -37,6 +38,7 @@ class ReportViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReportCollectionViewCell", for: indexPath) as! ReportCollectionViewCell
         cell.button.bgColor = UIColor.init(hex: collectionData[indexPath.row]["color"]!)
         cell.button.leftIconString = collectionData[indexPath.row]["icon"]!
+        cell.label.text = collectionData[indexPath.row]["title"]!
         return cell
     }
 

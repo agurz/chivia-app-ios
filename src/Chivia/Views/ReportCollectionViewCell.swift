@@ -14,6 +14,7 @@ class ReportCollectionViewCell : UICollectionViewCell {
     @IBOutlet var view: UIView!
     
     @IBOutlet var button: LGButton!
+    @IBOutlet var label: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

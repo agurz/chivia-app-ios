@@ -41,8 +41,8 @@
                                     <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="fa"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="play"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="oc"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="milestone"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="leftIconFontSize">
                                     <real key="value" value="20"/>
                                 </userDefinedRuntimeAttribute>
@@ -54,7 +54,7 @@
                                 <action selector="navigateButton:" destination="-1" eventType="touchUpInside" id="eZT-i9-PeY"/>
                             </connections>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug">
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug">
                             <rect key="frame" x="0.0" y="80" width="359" height="149"/>
                             <subviews>
                                 <stackView contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-rw-tu7">

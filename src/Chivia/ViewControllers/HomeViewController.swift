@@ -75,7 +75,8 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
         
         let formSheetViewController = MZFormSheetPresentationViewController(contentViewController: reportViewController)
         
-        formSheetViewController.presentationController?.contentViewSize = CGSize(width: 312, height: 276)
+        formSheetViewController.presentationController?.contentViewSize = CGSize(width: 394, height: 276)
+        //formSheetViewController.presentationController?.shouldApplyBackgroundBlurEffect = true
         
         present(formSheetViewController, animated: true, completion: nil)
     }

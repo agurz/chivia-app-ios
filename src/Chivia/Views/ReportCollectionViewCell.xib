@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportCollectionViewCell" customModule="Chivia" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="TRe-8p-T8O" id="GR9-ba-9cI"/>
+                <outlet property="label" destination="krb-pM-xZe" id="XDN-IV-CAs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="bqM-hO-B9c"/>
             </connections>
         </placeholder>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRe-8p-T8O" customClass="LGButton" customModule="LGButton">
-                    <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                    <rect key="frame" x="6" y="162" width="363" height="363"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="TRe-8p-T8O" secondAttribute="height" multiplier="1:1" id="S4W-Gt-6eU"/>
@@ -33,8 +34,8 @@
                             <color key="value" red="0.18823529410000001" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="warning"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="fa"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="octoface"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="oc"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="leftIconFontSize">
                             <real key="value" value="32"/>
                         </userDefinedRuntimeAttribute>
@@ -43,12 +44,21 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krb-pM-xZe">
+                    <rect key="frame" x="6" y="531" width="363" height="130"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="krb-pM-xZe" secondAttribute="bottom" constant="6" id="5tj-XP-VIv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TRe-8p-T8O" secondAttribute="trailing" constant="6" id="Vlv-3F-FGi"/>
-                <constraint firstItem="TRe-8p-T8O" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="gCj-sI-Ctu"/>
+                <constraint firstItem="TRe-8p-T8O" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="ZDC-1K-dgC"/>
+                <constraint firstItem="krb-pM-xZe" firstAttribute="top" secondItem="TRe-8p-T8O" secondAttribute="bottom" constant="6" id="aAV-wn-mbt"/>
+                <constraint firstItem="krb-pM-xZe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="aJr-c4-UID"/>
                 <constraint firstItem="TRe-8p-T8O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="ger-Q6-efM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="krb-pM-xZe" secondAttribute="trailing" constant="6" id="n8S-ee-cIp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
