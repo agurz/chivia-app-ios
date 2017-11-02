@@ -8,6 +8,6 @@
 
 protocol ReportTypeCollectionViewCellDelegate {
     
-    func reportTypeCollectionViewCell(clicked reportTypeCollectionViewCell: ReportTypeCollectionViewCell)
+    func reportTypeCollectionViewCell(clicked reportType: ReportType)
     
 }

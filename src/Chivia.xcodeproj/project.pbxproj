@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8956FAB11FAB5ADE00DD73AF /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB01FAB5ADE00DD73AF /* Report.swift */; };
+		8956FAB31FAB5E7B00DD73AF /* ReportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB21FAB5E7B00DD73AF /* ReportType.swift */; };
 		89AEDD931FA029950009AFDC /* ReportTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */; };
 		89B6C0821FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */; };
 		89B6C0841FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		4FB93925217C48601A7A7323 /* Pods-Chivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chivia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chivia/Pods-Chivia.release.xcconfig"; sourceTree = "<group>"; };
 		7D89651DAEAFB4D682DC6825 /* Pods_Chivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8956FAB01FAB5ADE00DD73AF /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		8956FAB21FAB5E7B00DD73AF /* ReportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportType.swift; sourceTree = "<group>"; };
 		89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeViewController.swift; sourceTree = "<group>"; };
 		89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 			children = (
 				89B757C21F9C3432008F14CD /* Route.swift */,
 				89B757C61F9CE812008F14CD /* Stand.swift */,
+				8956FAB01FAB5ADE00DD73AF /* Report.swift */,
+				8956FAB21FAB5E7B00DD73AF /* ReportType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,12 +359,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8956FAB11FAB5ADE00DD73AF /* Report.swift in Sources */,
 				89FF7EAA1FA66768007E5853 /* ReportViewController.swift in Sources */,
 				89B757C51F9CE5B5008F14CD /* StandService.swift in Sources */,
 				89B6C0871FA64D5000AEC098 /* UIColor.swift in Sources */,
 				89FF7EA81FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift in Sources */,
 				89B757BE1F9C31DD008F14CD /* GeocodingService.swift in Sources */,
 				89B757C01F9C31FB008F14CD /* ReportService.swift in Sources */,
+				8956FAB31FAB5E7B00DD73AF /* ReportType.swift in Sources */,
 				89D8FF141F98417200657548 /* HomeViewController.swift in Sources */,
 				89E9B3031F9EED2300A719C8 /* HomeMapViewDelegate.swift in Sources */,
 				89B6C0841FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift in Sources */,

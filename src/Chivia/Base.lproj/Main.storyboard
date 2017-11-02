@@ -186,14 +186,14 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UP5-Mc-aC4">
-                                        <rect key="frame" x="16" y="0.0" width="343" height="563"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="563"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-20-ozN" customClass="LGButton" customModule="LGButton">
-                                                <rect key="frame" x="125.5" y="16" width="92" height="92"/>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-20-ozN" customClass="LGButton" customModule="LGButton">
+                                                <rect key="frame" x="151.5" y="16" width="72" height="72"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rVX-20-ozN" secondAttribute="height" id="63l-3G-2v4"/>
-                                                    <constraint firstAttribute="height" constant="92" id="KoL-oy-Z0S"/>
+                                                    <constraint firstAttribute="height" constant="72" id="KoL-oy-Z0S"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
@@ -203,18 +203,16 @@
                                                         <real key="value" value="32"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="oc"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="hutbot"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="hubot"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="caw-Xs-Xu4">
-                                                <rect key="frame" x="16" y="116" width="311" height="431"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <rect key="frame" x="16" y="96" width="343" height="451"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="caw-Xs-Xu4" secondAttribute="bottom" constant="16" id="8hN-KL-d7X"/>
                                             <constraint firstItem="rVX-20-ozN" firstAttribute="top" secondItem="UP5-Mc-aC4" secondAttribute="top" constant="16" id="9ao-BM-j3O"/>
@@ -255,6 +253,8 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" id="XxH-0x-aFA"/>
                                     <constraint firstAttribute="trailing" secondItem="ikp-JX-BKC" secondAttribute="trailing" id="bkb-4g-2Fl"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="cvg-ch-x1M"/>
+                                    <constraint firstAttribute="trailing" secondItem="UP5-Mc-aC4" secondAttribute="trailing" id="iI8-6O-Sv7"/>
+                                    <constraint firstItem="UP5-Mc-aC4" firstAttribute="leading" secondItem="GXI-Am-cXo" secondAttribute="leading" id="nE4-L2-jHI"/>
                                     <constraint firstAttribute="trailing" secondItem="xpj-RX-nGv" secondAttribute="trailing" id="wOX-Eg-bns"/>
                                 </constraints>
                             </stackView>
@@ -268,6 +268,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qdb-VC-IBu"/>
                     </view>
+                    <connections>
+                        <outlet property="commentsTextView" destination="caw-Xs-Xu4" id="tbf-TM-iXR"/>
+                        <outlet property="reportTypeButton" destination="rVX-20-ozN" id="89i-qW-7SZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k90-b3-YrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

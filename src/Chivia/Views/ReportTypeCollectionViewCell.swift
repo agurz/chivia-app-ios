@@ -18,6 +18,8 @@ class ReportTypeCollectionViewCell : UICollectionViewCell {
     
     public var delegate: ReportTypeCollectionViewCellDelegate?
     
+    public var reportType: ReportType?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         Bundle.main.loadNibNamed("ReportTypeCollectionViewCell", owner: self, options: nil)
@@ -26,8 +28,16 @@ class ReportTypeCollectionViewCell : UICollectionViewCell {
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        button.bgColor = reportType!.iconColor
+        button.leftIconString = reportType!.iconString
+        label.text = reportType!.name
+    }
+    
     @IBAction func button(_ sender: LGButton) {
-        delegate?.reportTypeCollectionViewCell(clicked: self)
+        delegate?.reportTypeCollectionViewCell(clicked: reportType!)
     }
     
 }

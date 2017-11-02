@@ -13,10 +13,10 @@ class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var closeButton: UIButton!
     
-    private var collectionData: [[String:String]] = [
-        ["title": "Incidente", "icon": "alert", "color": "#e52b50"],
-        ["title": "Incidente en el mapa", "icon": "issue-opened", "color": "#ffbf00"],
-        ["title": "Robo", "icon": "bug", "color": "#a52a2a"]
+    private var collectionData: [ReportType] = [
+        ReportType.issue,
+        ReportType.mapIssue,
+        ReportType.theft
     ]
     
     override func viewDidLoad() {
@@ -33,9 +33,7 @@ class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UI
     internal func collectionView(_ _: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReportTypeCollectionViewCell", for: indexPath) as! ReportTypeCollectionViewCell
         cell.delegate = self
-        cell.button.bgColor = UIColor.init(hex: collectionData[indexPath.row]["color"]!)
-        cell.button.leftIconString = collectionData[indexPath.row]["icon"]!
-        cell.label.text = collectionData[indexPath.row]["title"]!
+        cell.reportType = collectionData[indexPath.row]
         return cell
     }
     
@@ -43,10 +41,11 @@ class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UI
         return 1
     }
     
-    internal func reportTypeCollectionViewCell(clicked reportCollectionViewCell: ReportTypeCollectionViewCell) {
-        let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController")
-        let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportViewController)
+    internal func reportTypeCollectionViewCell(clicked reportType: ReportType) {
+        let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+        reportViewController.reportType = reportType
         
+        let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportViewController)
         sheetViewController.presentationController?.contentViewSize = UILayoutFittingCompressedSize
         
         present(sheetViewController, animated: true, completion: nil)
