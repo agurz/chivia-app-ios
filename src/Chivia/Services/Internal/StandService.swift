@@ -18,8 +18,9 @@ class StandService {
         return Promise { fulfill, reject in
             Alamofire
                 .request("\(STAND_SERVICE_URL)")
+                .validate()
                 .responseJSON { response in
-                    if let data = response.data {
+                    if response.result.isSuccess, let data = response.data {
                         let json = JSON(data: data)
                         var stands = [Stand]()
                         
@@ -29,8 +30,12 @@ class StandService {
                         
                         fulfill(stands)
                     }
-                    else {
-                        //reject()
+                    else if let data = response.data {
+                        let json = JSON(data: data)
+                        reject(GenericError(message: json["message"].stringValue))
+                    }
+                    else if let err = response.error {
+                        reject(err)
                     }
             }
         }

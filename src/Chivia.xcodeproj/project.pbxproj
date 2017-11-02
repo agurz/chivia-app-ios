@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8956FAB11FAB5ADE00DD73AF /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB01FAB5ADE00DD73AF /* Report.swift */; };
 		8956FAB31FAB5E7B00DD73AF /* ReportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB21FAB5E7B00DD73AF /* ReportType.swift */; };
+		8956FAB61FAB74DC00DD73AF /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB51FAB74DC00DD73AF /* GenericError.swift */; };
 		89AEDD931FA029950009AFDC /* ReportTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */; };
 		89B6C0821FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */; };
 		89B6C0841FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */; };
@@ -38,6 +39,7 @@
 		7D89651DAEAFB4D682DC6825 /* Pods_Chivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8956FAB01FAB5ADE00DD73AF /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		8956FAB21FAB5E7B00DD73AF /* ReportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportType.swift; sourceTree = "<group>"; };
+		8956FAB51FAB74DC00DD73AF /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
 		89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeViewController.swift; sourceTree = "<group>"; };
 		89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 				4FB93925217C48601A7A7323 /* Pods-Chivia.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8956FAB41FAB74CB00DD73AF /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				8956FAB51FAB74DC00DD73AF /* GenericError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		89B336201F98EFCD00E0D094 /* ViewControllers */ = {
@@ -164,6 +174,7 @@
 		89D8FF101F98417200657548 /* Chivia */ = {
 			isa = PBXGroup;
 			children = (
+				8956FAB41FAB74CB00DD73AF /* Errors */,
 				89B6C0851FA64D4000AEC098 /* Extensions */,
 				89B757B71F9C318E008F14CD /* Services */,
 				89E9B2FF1F9EE8E100A719C8 /* Views */,
@@ -289,6 +300,7 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Turf/Turf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -312,6 +324,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Turf.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +386,7 @@
 				89B757BC1F9C31BF008F14CD /* RouteService.swift in Sources */,
 				89D8FF121F98417200657548 /* AppDelegate.swift in Sources */,
 				89E9B2F71F9EE2BC00A719C8 /* HomeMapView.swift in Sources */,
+				8956FAB61FAB74DC00DD73AF /* GenericError.swift in Sources */,
 				89AEDD931FA029950009AFDC /* ReportTypeViewController.swift in Sources */,
 				89B757C31F9C3432008F14CD /* Route.swift in Sources */,
 				89B757B91F9C31A3008F14CD /* ChiviaService.swift in Sources */,

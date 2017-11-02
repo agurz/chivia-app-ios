@@ -13,6 +13,7 @@ target 'Chivia' do
   pod 'MZFormSheetPresentationController'
   pod 'PromiseKit', '~> 4.4'
   pod 'SwiftyJSON'
+  pod 'Toast-Swift', '~> 2.0.0'
   
   # Set Pods Swift version to 3.2
   post_install do |installer|

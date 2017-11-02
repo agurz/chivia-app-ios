@@ -20,13 +20,18 @@ class RouteService {
         return Promise { fulfill, reject in
             Alamofire
                 .request("\(ROUTE_SERVICE_URL)?from=\(from.longitude),\(from.latitude)&to=\(to.longitude),\(to.latitude)")
+                .validate()
                 .responseJSON { response in
-                    if let data = response.data {
+                    if response.result.isSuccess, let data = response.data {
                         let route = Route(json: JSON(data: data))
                         fulfill(route)
                     }
-                    else {
-                        //reject()
+                    else if let data = response.data {
+                        let json = JSON(data: data)
+                        reject(GenericError(message: json["message"].stringValue))
+                    }
+                    else if let err = response.error {
+                        reject(err)
                     }
             }
         }
