@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class RouteService {
     
-    let ROUTE_SERVICE_URL = "http://localhost:3000/route"
+    let ROUTE_SERVICE_URL = "https://chivia.herokuapp.com/route"
     
     func get(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Promise<Route> {
         print("\(ROUTE_SERVICE_URL)?from=\(from.latitude),\(from.longitude)&to=\(to.latitude),\(to.longitude)")

@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class StandService {
     
-    let STAND_SERVICE_URL = "http://localhost:3000/stand"
+    let STAND_SERVICE_URL = "https://chivia.herokuapp.com/stand"
     
     func get() -> Promise<[Stand]> {
         return Promise { fulfill, reject in
