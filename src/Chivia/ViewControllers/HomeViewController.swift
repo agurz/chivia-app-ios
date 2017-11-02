@@ -64,17 +64,15 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
             .singleton()
             .geocoding
             .get(address: address)
-            .then {
-                self.homeMapView.setDestination(destination: $0)
-            }
+            .then { self.homeMapView.setDestination(destination: $0) }
     }
     
     @IBAction func reportButton(_ _: UIView) {
-        let reportTypeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportTypeViewController")
-        let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportTypeViewController)
+        let reportTypeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportTypeViewController") as! ReportTypeViewController
+        reportTypeViewController.userLocation = homeMapView.userLocation
         
-        sheetViewController.presentationController?.contentViewSize = UILayoutFittingCompressedSize // CGSize(width: 394, height: 276)
-        //formSheetViewController.presentationController?.shouldApplyBackgroundBlurEffect = true
+        let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportTypeViewController)
+        sheetViewController.presentationController?.contentViewSize = UILayoutFittingCompressedSize
         
         present(sheetViewController, animated: true, completion: nil)
     }

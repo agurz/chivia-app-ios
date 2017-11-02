@@ -25,6 +25,10 @@ class HomeMapView : UIView, MGLMapViewDelegate {
     
     public var delegate: HomeMapViewDelegate?
     
+    public var userLocation: CLLocationCoordinate2D? {
+        get { return mapView.userLocation?.coordinate }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         Bundle.main.loadNibNamed("HomeMapView", owner: self, options: nil)
@@ -107,9 +111,7 @@ class HomeMapView : UIView, MGLMapViewDelegate {
             .singleton()
             .route
             .get(from: mapView.userLocation!.coordinate, to: destination)
-            .then {
-                self.setRoute(route: $0)
-            }
+            .then { self.setRoute(route: $0) }
     }
     
     private func setDestinationToNil() {

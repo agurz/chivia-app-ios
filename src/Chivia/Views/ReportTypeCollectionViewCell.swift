@@ -1,5 +1,5 @@
 //
-//  ReportCollectionViewCell.swift
+//  ReportTypeCollectionViewCell.swift
 //  Chivia
 //
 //  Created by Agustín Rodríguez on 10/29/17.

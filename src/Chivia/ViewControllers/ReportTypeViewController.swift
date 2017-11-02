@@ -6,6 +6,7 @@
 //  Copyright © 2017 Agustín Rodríguez. All rights reserved.
 //
 
+import CoreLocation
 import MZFormSheetPresentationController
 
 class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ReportTypeCollectionViewCellDelegate {
@@ -13,11 +14,14 @@ class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var closeButton: UIButton!
     
+    
     private var collectionData: [ReportType] = [
         ReportType.issue,
         ReportType.mapIssue,
         ReportType.theft
     ]
+    
+    public var userLocation: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,7 @@ class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UI
     internal func reportTypeCollectionViewCell(clicked reportType: ReportType) {
         let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
         reportViewController.reportType = reportType
+        reportViewController.userLocation = userLocation
         
         let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportViewController)
         sheetViewController.presentationController?.contentViewSize = UILayoutFittingCompressedSize

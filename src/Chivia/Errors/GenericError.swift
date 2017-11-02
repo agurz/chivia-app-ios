@@ -6,8 +6,22 @@
 //  Copyright © 2017 Agustín Rodríguez. All rights reserved.
 //
 
-struct GenericError : Error {
+import Foundation
 
-    let message: String
+class GenericError : Error, LocalizedError {
+
+    private let message: String
+    
+    public var errorDescription: String? {
+        return message
+    }
+    
+    public var localizedDescription: String {
+        return message
+    }
+    
+    init(message: String) {
+        self.message = message
+    }
     
 }

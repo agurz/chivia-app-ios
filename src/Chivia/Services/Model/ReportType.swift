@@ -46,7 +46,7 @@ class ReportType {
     static var mapIssue: ReportType {
         get {
             return ReportType(json: JSON([
-                "id": 1,
+                "id": 2,
                 "name": "Incidente en el mapa",
                 "iconColor": "#ffbf00",
                 "iconString": "issue-opened"
@@ -57,7 +57,7 @@ class ReportType {
     static var theft: ReportType {
         get {
             return ReportType(json: JSON([
-                "id": 1,
+                "id": 3,
                 "name": "Robo",
                 "iconColor": "#a52a2a",
                 "iconString": "bug"
