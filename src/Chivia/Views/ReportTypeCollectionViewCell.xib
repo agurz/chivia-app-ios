@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRe-8p-T8O" customClass="LGButton" customModule="LGButton">
-                    <rect key="frame" x="6" y="26" width="363" height="363"/>
+                    <rect key="frame" x="12" y="32" width="351" height="351"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="TRe-8p-T8O" secondAttribute="height" multiplier="1:1" id="S4W-Gt-6eU"/>
@@ -48,20 +48,20 @@
                     </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krb-pM-xZe">
-                    <rect key="frame" x="6" y="395" width="363" height="20.5"/>
+                    <rect key="frame" x="12" y="387" width="351" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="krb-pM-xZe" secondAttribute="bottom" constant="6" id="5tj-XP-VIv"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TRe-8p-T8O" secondAttribute="trailing" constant="6" id="Vlv-3F-FGi"/>
-                <constraint firstItem="TRe-8p-T8O" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="ZDC-1K-dgC"/>
-                <constraint firstItem="krb-pM-xZe" firstAttribute="top" secondItem="TRe-8p-T8O" secondAttribute="bottom" constant="6" id="aAV-wn-mbt"/>
-                <constraint firstItem="krb-pM-xZe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="aJr-c4-UID"/>
-                <constraint firstItem="TRe-8p-T8O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="ger-Q6-efM"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="krb-pM-xZe" secondAttribute="trailing" constant="6" id="n8S-ee-cIp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="krb-pM-xZe" secondAttribute="bottom" constant="12" id="5tj-XP-VIv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TRe-8p-T8O" secondAttribute="trailing" constant="12" id="Vlv-3F-FGi"/>
+                <constraint firstItem="TRe-8p-T8O" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="ZDC-1K-dgC"/>
+                <constraint firstItem="krb-pM-xZe" firstAttribute="top" secondItem="TRe-8p-T8O" secondAttribute="bottom" constant="4" id="aAV-wn-mbt"/>
+                <constraint firstItem="krb-pM-xZe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="aJr-c4-UID"/>
+                <constraint firstItem="TRe-8p-T8O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="ger-Q6-efM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="krb-pM-xZe" secondAttribute="trailing" constant="12" id="n8S-ee-cIp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

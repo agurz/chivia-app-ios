@@ -73,7 +73,7 @@ class HomeViewController: UIViewController, HomeMapViewDelegate {
         let reportTypeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportTypeViewController")
         let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportTypeViewController)
         
-        sheetViewController.presentationController?.contentViewSize = CGSize(width: 394, height: 276)
+        sheetViewController.presentationController?.contentViewSize = UILayoutFittingCompressedSize // CGSize(width: 394, height: 276)
         //formSheetViewController.presentationController?.shouldApplyBackgroundBlurEffect = true
         
         present(sheetViewController, animated: true, completion: nil)

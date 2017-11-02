@@ -6,7 +6,7 @@
 //  Copyright © 2017 Agustín Rodríguez. All rights reserved.
 //
 
-import UIKit
+import MZFormSheetPresentationController
 
 class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ReportTypeCollectionViewCellDelegate {
 
@@ -21,14 +21,9 @@ class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         collectionView.dataSource = self
         collectionView.delegate = self
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
     }
     
     internal func collectionView(_ _: UICollectionView, numberOfItemsInSection _: Int) -> Int {
@@ -44,13 +39,17 @@ class ReportTypeViewController: UIViewController, UICollectionViewDataSource, UI
         return cell
     }
     
+    internal func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     internal func reportTypeCollectionViewCell(clicked reportCollectionViewCell: ReportTypeCollectionViewCell) {
-        /*let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController")
+        let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController")
         let sheetViewController = MZFormSheetPresentationViewController(contentViewController: reportViewController)
         
-        sheetViewController.presentationController?.contentViewSize = CGSize(width: 394, height: 276)
+        sheetViewController.presentationController?.contentViewSize = UILayoutFittingCompressedSize
         
-        present(sheetViewController, animated: true, completion: nil)*/
+        present(sheetViewController, animated: true, completion: nil)
     }
 
     @IBAction func closeButton(_ sender: UIButton) {

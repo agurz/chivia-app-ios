@@ -27,6 +27,7 @@
 		89E9B3011F9EE8F000A719C8 /* HomeMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */; };
 		89E9B3031F9EED2300A719C8 /* HomeMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */; };
 		89FF7EA81FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FF7EA71FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift */; };
+		89FF7EAA1FA66768007E5853 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FF7EA91FA66768007E5853 /* ReportViewController.swift */; };
 		9B8735AE7C504F88398E4F07 /* Pods_Chivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D89651DAEAFB4D682DC6825 /* Pods_Chivia.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMapView.xib; sourceTree = "<group>"; };
 		89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapViewDelegate.swift; sourceTree = "<group>"; };
 		89FF7EA71FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		89FF7EA91FA66768007E5853 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DCBA15DB9D7820ECD233967F /* Pods-Chivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chivia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chivia/Pods-Chivia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 			children = (
 				89D8FF131F98417200657548 /* HomeViewController.swift */,
 				89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */,
+				89FF7EA91FA66768007E5853 /* ReportViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FF7EAA1FA66768007E5853 /* ReportViewController.swift in Sources */,
 				89B757C51F9CE5B5008F14CD /* StandService.swift in Sources */,
 				89B6C0871FA64D5000AEC098 /* UIColor.swift in Sources */,
 				89FF7EA81FA66520007E5853 /* ReportTypeCollectionViewCellDelegate.swift in Sources */,

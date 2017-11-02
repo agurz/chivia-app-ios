@@ -98,36 +98,49 @@
         <!--Report Type View Controller-->
         <scene sceneID="Opt-C2-r49">
             <objects>
-                <viewController storyboardIdentifier="ReportTypeViewController" id="Xl7-fT-NPm" customClass="ReportTypeViewController" customModule="Chivia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReportTypeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xl7-fT-NPm" customClass="ReportTypeViewController" customModule="Chivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FFt-is-K54">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3qu-Zx-nRf">
-                                <rect key="frame" x="32" y="52" width="311" height="583"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wft-2q-Qxy">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="535"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-QL-Sai">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wft-2q-Qxy">
+                                                <rect key="frame" x="16" y="16" width="343" height="583"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="yPM-Ur-XBu">
+                                                    <size key="itemSize" width="96" height="168"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReportTypeCollectionViewCell" id="BTp-cb-U7s" customClass="ReportTypeCollectionViewCell" customModule="Chivia" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="168"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="96" height="168"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </view>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="yPM-Ur-XBu">
-                                            <size key="itemSize" width="104" height="152"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReportTypeCollectionViewCell" id="BTp-cb-U7s" customClass="ReportTypeCollectionViewCell" customModule="Chivia" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="152"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="152"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
+                                        <constraints>
+                                            <constraint firstItem="wft-2q-Qxy" firstAttribute="top" secondItem="b9G-QL-Sai" secondAttribute="top" constant="16" id="QLp-8A-On1"/>
+                                            <constraint firstItem="wft-2q-Qxy" firstAttribute="leading" secondItem="b9G-QL-Sai" secondAttribute="leading" constant="16" id="Ziy-tR-z7v"/>
+                                            <constraint firstAttribute="trailing" secondItem="wft-2q-Qxy" secondAttribute="trailing" constant="16" id="cvU-rr-YrW"/>
+                                            <constraint firstAttribute="bottom" secondItem="wft-2q-Qxy" secondAttribute="bottom" id="tsY-4i-E3g"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kay-fC-1ix">
-                                        <rect key="frame" x="0.0" y="541" width="311" height="42"/>
+                                        <rect key="frame" x="0.0" y="605" width="375" height="42"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="E5n-rR-sPB"/>
                                         </constraints>
@@ -137,14 +150,18 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="256" id="al2-5n-lAd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="nS5-Kz-eNT"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="y7Q-Yj-enn" firstAttribute="trailing" secondItem="3qu-Zx-nRf" secondAttribute="trailing" constant="32" id="F4q-V3-2fP"/>
-                            <constraint firstItem="y7Q-Yj-enn" firstAttribute="bottom" secondItem="3qu-Zx-nRf" secondAttribute="bottom" constant="32" id="NC5-j6-dqg"/>
-                            <constraint firstItem="3qu-Zx-nRf" firstAttribute="leading" secondItem="y7Q-Yj-enn" secondAttribute="leading" constant="32" id="Z28-G6-L6R"/>
-                            <constraint firstItem="3qu-Zx-nRf" firstAttribute="top" secondItem="y7Q-Yj-enn" secondAttribute="top" constant="32" id="gHp-IL-Ye4"/>
+                            <constraint firstItem="y7Q-Yj-enn" firstAttribute="trailing" secondItem="3qu-Zx-nRf" secondAttribute="trailing" id="F4q-V3-2fP"/>
+                            <constraint firstItem="y7Q-Yj-enn" firstAttribute="bottom" secondItem="3qu-Zx-nRf" secondAttribute="bottom" id="NC5-j6-dqg"/>
+                            <constraint firstItem="3qu-Zx-nRf" firstAttribute="leading" secondItem="y7Q-Yj-enn" secondAttribute="leading" id="Z28-G6-L6R"/>
+                            <constraint firstItem="3qu-Zx-nRf" firstAttribute="top" secondItem="y7Q-Yj-enn" secondAttribute="top" id="gHp-IL-Ye4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y7Q-Yj-enn"/>
                     </view>
@@ -155,7 +172,106 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYs-bj-JDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="-25"/>
+            <point key="canvasLocation" x="633" y="-25"/>
+        </scene>
+        <!--Report View Controller-->
+        <scene sceneID="jwf-kY-zmG">
+            <objects>
+                <viewController storyboardIdentifier="ReportViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EKQ-J9-C7Y" customClass="ReportViewController" customModule="Chivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p3S-j9-As9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GXI-Am-cXo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UP5-Mc-aC4">
+                                        <rect key="frame" x="16" y="0.0" width="343" height="563"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-20-ozN" customClass="LGButton" customModule="LGButton">
+                                                <rect key="frame" x="125.5" y="16" width="92" height="92"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rVX-20-ozN" secondAttribute="height" id="63l-3G-2v4"/>
+                                                    <constraint firstAttribute="height" constant="92" id="KoL-oy-Z0S"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                        <color key="value" red="0.18823529410000001" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftIconFontSize">
+                                                        <real key="value" value="32"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="oc"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="hutbot"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="caw-Xs-Xu4">
+                                                <rect key="frame" x="16" y="116" width="311" height="431"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="caw-Xs-Xu4" secondAttribute="bottom" constant="16" id="8hN-KL-d7X"/>
+                                            <constraint firstItem="rVX-20-ozN" firstAttribute="top" secondItem="UP5-Mc-aC4" secondAttribute="top" constant="16" id="9ao-BM-j3O"/>
+                                            <constraint firstItem="caw-Xs-Xu4" firstAttribute="leading" secondItem="UP5-Mc-aC4" secondAttribute="leading" constant="16" id="B5B-O4-jSd"/>
+                                            <constraint firstItem="rVX-20-ozN" firstAttribute="centerX" secondItem="UP5-Mc-aC4" secondAttribute="centerX" id="TzG-as-cMh"/>
+                                            <constraint firstAttribute="trailing" secondItem="caw-Xs-Xu4" secondAttribute="trailing" constant="16" id="bYV-9m-xEV"/>
+                                            <constraint firstItem="caw-Xs-Xu4" firstAttribute="top" secondItem="rVX-20-ozN" secondAttribute="bottom" constant="8" id="v1A-QZ-itv"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-RX-nGv">
+                                        <rect key="frame" x="0.0" y="563" width="375" height="42"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="upi-RV-uI2"/>
+                                        </constraints>
+                                        <state key="normal" title="Cerrar"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="EKQ-J9-C7Y" eventType="touchUpInside" id="R1E-RR-mJz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikp-JX-BKC">
+                                        <rect key="frame" x="0.0" y="605" width="375" height="42"/>
+                                        <color key="backgroundColor" red="0.18823529410000001" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="JxP-UE-oCy"/>
+                                        </constraints>
+                                        <state key="normal" title="Reportar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reportButton:" destination="EKQ-J9-C7Y" eventType="touchUpInside" id="QI9-5v-6xV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ikp-JX-BKC" firstAttribute="leading" secondItem="GXI-Am-cXo" secondAttribute="leading" id="Akj-iv-INY"/>
+                                    <constraint firstItem="xpj-RX-nGv" firstAttribute="leading" secondItem="GXI-Am-cXo" secondAttribute="leading" id="U7b-Xu-5TY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" id="XxH-0x-aFA"/>
+                                    <constraint firstAttribute="trailing" secondItem="ikp-JX-BKC" secondAttribute="trailing" id="bkb-4g-2Fl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="cvg-ch-x1M"/>
+                                    <constraint firstAttribute="trailing" secondItem="xpj-RX-nGv" secondAttribute="trailing" id="wOX-Eg-bns"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qdb-VC-IBu" firstAttribute="bottom" secondItem="GXI-Am-cXo" secondAttribute="bottom" identifier="ReportViewController" id="b77-b3-pmp"/>
+                            <constraint firstItem="Qdb-VC-IBu" firstAttribute="trailing" secondItem="GXI-Am-cXo" secondAttribute="trailing" id="fBC-je-jui"/>
+                            <constraint firstItem="GXI-Am-cXo" firstAttribute="leading" secondItem="Qdb-VC-IBu" secondAttribute="leading" id="npG-GO-euv"/>
+                            <constraint firstItem="GXI-Am-cXo" firstAttribute="top" secondItem="Qdb-VC-IBu" secondAttribute="top" id="xXf-kS-sLq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qdb-VC-IBu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k90-b3-YrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="-25"/>
         </scene>
     </scenes>
 </document>
