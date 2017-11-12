@@ -15,8 +15,16 @@ target 'Chivia' do
   pod 'SwiftyJSON'
   pod 'Toast-Swift', '~> 2.0.0'
   
-  # Set Pods Swift version to 3.2
   post_install do |installer|
+
+      # https://github.com/CocoaPods/CocoaPods/issues/5334#issuecomment-255831772
+      installer.pods_project.build_configurations.each do |config|
+          config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = [
+              '$(FRAMEWORK_SEARCH_PATHS)'
+          ]
+      end
+      
+      # Set Pods Swift version to 3.2
       installer.pods_project.targets.each do |target|
           if not ['LGButton'].include?(target.name)
               target.build_configurations.each do |config|
