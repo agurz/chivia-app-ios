@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,7 +38,7 @@
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="value" red="0.18823529410000001" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="oc"/>
@@ -54,7 +54,7 @@
                                 <action selector="navigateButton:" destination="-1" eventType="touchUpInside" id="eZT-i9-PeY"/>
                             </connections>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug">
                             <rect key="frame" x="0.0" y="80" width="359" height="149"/>
                             <subviews>
                                 <stackView contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-rw-tu7">
@@ -143,6 +143,12 @@
                         <constraint firstItem="o1r-Zu-ega" firstAttribute="top" secondItem="s1W-si-spt" secondAttribute="top" constant="8" id="dqw-jZ-K2I"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="s1W-si-spt"/>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="o1r-Zu-ega"/>
+                            <exclude reference="hrj-Ec-Oug"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <constraints>

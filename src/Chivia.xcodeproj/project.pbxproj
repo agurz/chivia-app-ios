@@ -10,6 +10,8 @@
 		8956FAB11FAB5ADE00DD73AF /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB01FAB5ADE00DD73AF /* Report.swift */; };
 		8956FAB31FAB5E7B00DD73AF /* ReportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB21FAB5E7B00DD73AF /* ReportType.swift */; };
 		8956FAB61FAB74DC00DD73AF /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB51FAB74DC00DD73AF /* GenericError.swift */; };
+		897D53851FB7CE6200B52EF0 /* Gorditas-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 897D53831FB7CE6000B52EF0 /* Gorditas-Bold.ttf */; };
+		897D53861FB7CE6200B52EF0 /* Gorditas-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 897D53841FB7CE6100B52EF0 /* Gorditas-Regular.ttf */; };
 		89AEDD931FA029950009AFDC /* ReportTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */; };
 		89B6C0821FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */; };
 		89B6C0841FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */; };
@@ -40,6 +42,8 @@
 		8956FAB01FAB5ADE00DD73AF /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		8956FAB21FAB5E7B00DD73AF /* ReportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportType.swift; sourceTree = "<group>"; };
 		8956FAB51FAB74DC00DD73AF /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
+		897D53831FB7CE6000B52EF0 /* Gorditas-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gorditas-Bold.ttf"; sourceTree = "<group>"; };
+		897D53841FB7CE6100B52EF0 /* Gorditas-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gorditas-Regular.ttf"; sourceTree = "<group>"; };
 		89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeViewController.swift; sourceTree = "<group>"; };
 		89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +105,15 @@
 				8956FAB51FAB74DC00DD73AF /* GenericError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		897D53821FB7CE4800B52EF0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				897D53831FB7CE6000B52EF0 /* Gorditas-Bold.ttf */,
+				897D53841FB7CE6100B52EF0 /* Gorditas-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		89B336201F98EFCD00E0D094 /* ViewControllers */ = {
@@ -181,6 +194,7 @@
 				89B336201F98EFCD00E0D094 /* ViewControllers */,
 				89D8FF111F98417200657548 /* AppDelegate.swift */,
 				89D8FF181F98417200657548 /* Assets.xcassets */,
+				897D53821FB7CE4800B52EF0 /* Fonts */,
 				89D8FF151F98417200657548 /* Main.storyboard */,
 				89D8FF1A1F98417200657548 /* LaunchScreen.storyboard */,
 				89D8FF1D1F98417200657548 /* Info.plist */,
@@ -264,9 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D8FF1C1F98417200657548 /* LaunchScreen.storyboard in Resources */,
+				897D53861FB7CE6200B52EF0 /* Gorditas-Regular.ttf in Resources */,
 				89D8FF191F98417200657548 /* Assets.xcassets in Resources */,
 				89B6C0821FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib in Resources */,
 				89E9B3011F9EE8F000A719C8 /* HomeMapView.xib in Resources */,
+				897D53851FB7CE6200B52EF0 /* Gorditas-Bold.ttf in Resources */,
 				89D8FF171F98417200657548 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

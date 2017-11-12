@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KbM-oG-dys">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Chiviá-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Chivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTB-r4-lzZ" customClass="HomeMapView" customModule="Chivia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="¿Hacia dónde vas hoy?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-0Q-isn">
-                                <rect key="frame" x="16" y="36" width="568" height="48"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="¿A dónde quieres llegar hoy?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h45-Ls-iL5">
+                                <rect key="frame" x="16" y="80" width="343" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="EoT-SV-S3i"/>
+                                    <constraint firstAttribute="height" constant="48" id="tM5-Ek-rop"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zge-Mx-WIN">
-                                <rect key="frame" x="544" y="36" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="zge-Mx-WIN" secondAttribute="height" id="EGe-Gw-qPD"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xX-3q-qmb">
+                                <rect key="frame" x="329" y="80" width="30" height="48"/>
                                 <state key="normal" title="Ir"/>
                                 <connections>
-                                    <action selector="findBestRouteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lVD-CM-Kph"/>
+                                    <action selector="findBestRouteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSF-MS-X48"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MK3-YH-sgm" customClass="LGButton" customModule="LGButton">
-                                <rect key="frame" x="532" y="276" width="56" height="56"/>
+                                <rect key="frame" x="303" y="595" width="56" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="DCF-dg-DzP"/>
@@ -51,7 +51,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="oc"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="location"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="plus"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
@@ -66,23 +66,24 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MK3-YH-sgm" secondAttribute="trailing" constant="12" id="D0h-sW-8Je"/>
-                            <constraint firstItem="iTB-r4-lzZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ITR-aW-Wca"/>
+                            <constraint firstItem="7xX-3q-qmb" firstAttribute="trailing" secondItem="h45-Ls-iL5" secondAttribute="trailing" id="CD1-LJ-p4c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MK3-YH-sgm" secondAttribute="trailing" constant="16" id="D0h-sW-8Je"/>
+                            <constraint firstItem="h45-Ls-iL5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="OGb-WP-cT7"/>
                             <constraint firstItem="iTB-r4-lzZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PuZ-AF-PoA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zge-Mx-WIN" secondAttribute="trailing" constant="8" id="QnT-qo-ASd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MK3-YH-sgm" secondAttribute="bottom" constant="268" id="Qua-OU-SWf"/>
-                            <constraint firstItem="zge-Mx-WIN" firstAttribute="height" secondItem="jD0-0Q-isn" secondAttribute="height" id="V4W-TL-Gfv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MK3-YH-sgm" secondAttribute="bottom" constant="16" id="Qua-OU-SWf"/>
+                            <constraint firstItem="h45-Ls-iL5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Sxb-qM-3OY"/>
+                            <constraint firstItem="7xX-3q-qmb" firstAttribute="top" secondItem="h45-Ls-iL5" secondAttribute="top" id="UaH-4X-Lmg"/>
+                            <constraint firstItem="iTB-r4-lzZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VwJ-lz-9iD"/>
+                            <constraint firstItem="iTB-r4-lzZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="WC1-NX-Eov"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iTB-r4-lzZ" secondAttribute="bottom" id="Yas-hc-FVG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iTB-r4-lzZ" secondAttribute="trailing" id="YwR-K5-yJS"/>
-                            <constraint firstItem="jD0-0Q-isn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gib-mt-Adg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jD0-0Q-isn" secondAttribute="trailing" constant="16" id="jfP-OH-BMD"/>
-                            <constraint firstItem="jD0-0Q-isn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qiI-O4-tZX"/>
-                            <constraint firstItem="zge-Mx-WIN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="smg-sr-y2h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h45-Ls-iL5" secondAttribute="trailing" constant="16" id="dLy-hV-fbe"/>
+                            <constraint firstItem="7xX-3q-qmb" firstAttribute="bottom" secondItem="h45-Ls-iL5" secondAttribute="bottom" id="hMp-Sl-PcJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Chiviá" id="726-bK-7Rd"/>
                     <connections>
-                        <outlet property="destinationTextField" destination="jD0-0Q-isn" id="xbR-tS-Pj3"/>
+                        <outlet property="destinationTextField" destination="h45-Ls-iL5" id="wdd-n7-PwB"/>
                         <outlet property="homeMapView" destination="iTB-r4-lzZ" id="XhF-Cg-35A"/>
                         <outlet property="reportButton" destination="MK3-YH-sgm" id="Ldx-aG-TPb"/>
                         <outlet property="reportButtonConstraint" destination="Qua-OU-SWf" id="ZmC-tJ-aKX"/>
@@ -90,24 +91,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="-24"/>
+            <point key="canvasLocation" x="192.80000000000001" y="-24.7376311844078"/>
         </scene>
         <!--Report Type View Controller-->
         <scene sceneID="Opt-C2-r49">
             <objects>
                 <viewController storyboardIdentifier="ReportTypeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xl7-fT-NPm" customClass="ReportTypeViewController" customModule="Chivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FFt-is-K54">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3qu-Zx-nRf">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-QL-Sai">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="532"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wft-2q-Qxy">
-                                                <rect key="frame" x="16" y="16" width="568" height="516"/>
+                                                <rect key="frame" x="16" y="16" width="343" height="583"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="yPM-Ur-XBu">
                                                     <size key="itemSize" width="96" height="168"/>
@@ -136,7 +137,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kay-fC-1ix">
-                                        <rect key="frame" x="0.0" y="538" width="600" height="42"/>
+                                        <rect key="frame" x="0.0" y="605" width="375" height="42"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="E5n-rR-sPB"/>
@@ -169,24 +170,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYs-bj-JDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="633" y="-25"/>
+            <point key="canvasLocation" x="193" y="899"/>
         </scene>
         <!--Report View Controller-->
         <scene sceneID="jwf-kY-zmG">
             <objects>
                 <viewController storyboardIdentifier="ReportViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EKQ-J9-C7Y" customClass="ReportViewController" customModule="Chivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p3S-j9-As9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GXI-Am-cXo">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UP5-Mc-aC4">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="496"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="563"/>
                                         <subviews>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-20-ozN" customClass="LGButton" customModule="LGButton">
-                                                <rect key="frame" x="264" y="16" width="72" height="72"/>
+                                                <rect key="frame" x="151.5" y="16" width="72" height="72"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rVX-20-ozN" secondAttribute="height" id="63l-3G-2v4"/>
@@ -205,7 +206,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="caw-Xs-Xu4">
-                                                <rect key="frame" x="16" y="96" width="568" height="384"/>
+                                                <rect key="frame" x="16" y="96" width="343" height="451"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -220,7 +221,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-RX-nGv">
-                                        <rect key="frame" x="0.0" y="496" width="600" height="42"/>
+                                        <rect key="frame" x="0.0" y="563" width="375" height="42"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="upi-RV-uI2"/>
@@ -231,7 +232,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikp-JX-BKC">
-                                        <rect key="frame" x="0.0" y="538" width="600" height="42"/>
+                                        <rect key="frame" x="0.0" y="605" width="375" height="42"/>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="JxP-UE-oCy"/>
@@ -272,7 +273,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k90-b3-YrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="-25"/>
+            <point key="canvasLocation" x="1018" y="899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nVz-Fa-SAl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KbM-oG-dys" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="waP-fT-qit">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.18823529410000001" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Gorditas-Regular" family="Gorditas" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Duh-dT-whF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lBd-CQ-St0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-591" y="-26"/>
         </scene>
     </scenes>
 </document>

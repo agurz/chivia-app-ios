@@ -68,6 +68,10 @@ class HomeMapView : UIView, MGLMapViewDelegate {
         return 3
     }
     
+    func mapView(_ _: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
+        return UIColor(hex: "#305CC0")
+    }
+    
     private func loadStands() {
         ChiviaService
             .singleton()
@@ -105,7 +109,8 @@ class HomeMapView : UIView, MGLMapViewDelegate {
             mapViewDestinationAnnotation?.coordinate = destination
         }
         
-        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 110, left: 32, bottom: 256, right: 32)), animated: true)
+        // UIEdgeInsets(top: 112, left: 32, bottom: 256, right: 32)
+        mapView.setCamera(mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds(sw: mapView.userLocation!.coordinate, ne: destination), edgePadding: UIEdgeInsets(top: 112, left: 32, bottom: 32, right: 32)), animated: true)
         
         ChiviaService
             .singleton()

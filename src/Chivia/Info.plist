@@ -33,6 +33,11 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location When In Use Usage Description</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gorditas-Bold.ttf</string>
+		<string>Gorditas-Regular.ttf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
