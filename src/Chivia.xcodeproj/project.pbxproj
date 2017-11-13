@@ -12,6 +12,8 @@
 		8956FAB61FAB74DC00DD73AF /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956FAB51FAB74DC00DD73AF /* GenericError.swift */; };
 		897D53851FB7CE6200B52EF0 /* Gorditas-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 897D53831FB7CE6000B52EF0 /* Gorditas-Bold.ttf */; };
 		897D53861FB7CE6200B52EF0 /* Gorditas-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 897D53841FB7CE6100B52EF0 /* Gorditas-Regular.ttf */; };
+		89ABA8E41FBA4415008FE228 /* HomeMapViewAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ABA8E31FBA4415008FE228 /* HomeMapViewAnnotation.swift */; };
+		89ABA8E51FBA4859008FE228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF181F98417200657548 /* Assets.xcassets */; };
 		89AEDD931FA029950009AFDC /* ReportTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */; };
 		89B6C0821FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */; };
 		89B6C0841FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */; };
@@ -26,7 +28,6 @@
 		89D8FF121F98417200657548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D8FF111F98417200657548 /* AppDelegate.swift */; };
 		89D8FF141F98417200657548 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D8FF131F98417200657548 /* HomeViewController.swift */; };
 		89D8FF171F98417200657548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF151F98417200657548 /* Main.storyboard */; };
-		89D8FF191F98417200657548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF181F98417200657548 /* Assets.xcassets */; };
 		89D8FF1C1F98417200657548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8FF1A1F98417200657548 /* LaunchScreen.storyboard */; };
 		89E9B2F71F9EE2BC00A719C8 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9B2F61F9EE2BC00A719C8 /* HomeMapView.swift */; };
 		89E9B3011F9EE8F000A719C8 /* HomeMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */; };
@@ -44,6 +45,7 @@
 		8956FAB51FAB74DC00DD73AF /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
 		897D53831FB7CE6000B52EF0 /* Gorditas-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gorditas-Bold.ttf"; sourceTree = "<group>"; };
 		897D53841FB7CE6100B52EF0 /* Gorditas-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gorditas-Regular.ttf"; sourceTree = "<group>"; };
+		89ABA8E31FBA4415008FE228 /* HomeMapViewAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapViewAnnotation.swift; sourceTree = "<group>"; };
 		89AEDD921FA029950009AFDC /* ReportTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeViewController.swift; sourceTree = "<group>"; };
 		89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				89E9B3001F9EE8F000A719C8 /* HomeMapView.xib */,
 				89E9B2F61F9EE2BC00A719C8 /* HomeMapView.swift */,
+				89ABA8E31FBA4415008FE228 /* HomeMapViewAnnotation.swift */,
 				89E9B3021F9EED2300A719C8 /* HomeMapViewDelegate.swift */,
 				89B6C0811FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib */,
 				89B6C0831FA6346A00AEC098 /* ReportTypeCollectionViewCell.swift */,
@@ -279,9 +282,9 @@
 			files = (
 				89D8FF1C1F98417200657548 /* LaunchScreen.storyboard in Resources */,
 				897D53861FB7CE6200B52EF0 /* Gorditas-Regular.ttf in Resources */,
-				89D8FF191F98417200657548 /* Assets.xcassets in Resources */,
 				89B6C0821FA6345E00AEC098 /* ReportTypeCollectionViewCell.xib in Resources */,
 				89E9B3011F9EE8F000A719C8 /* HomeMapView.xib in Resources */,
+				89ABA8E51FBA4859008FE228 /* Assets.xcassets in Resources */,
 				897D53851FB7CE6200B52EF0 /* Gorditas-Bold.ttf in Resources */,
 				89D8FF171F98417200657548 /* Main.storyboard in Resources */,
 			);
@@ -407,6 +410,7 @@
 				89B757C31F9C3432008F14CD /* Route.swift in Sources */,
 				89B757B91F9C31A3008F14CD /* ChiviaService.swift in Sources */,
 				89B757C71F9CE812008F14CD /* Stand.swift in Sources */,
+				89ABA8E41FBA4415008FE228 /* HomeMapViewAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

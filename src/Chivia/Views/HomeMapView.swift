@@ -17,7 +17,7 @@ class HomeMapView : UIView, MGLMapViewDelegate {
     @IBOutlet var zeroHeightConstraint: NSLayoutConstraint!
     
     private var mapViewHasLocatedUser = false
-    private var mapViewDestinationAnnotation: MGLPointAnnotation?
+    private var mapViewDestinationAnnotation: HomeMapViewAnnotation?
     private var mapViewRouteAnnotation: MGLPolyline?
     
     private var destination: CLLocationCoordinate2D?
@@ -64,6 +64,15 @@ class HomeMapView : UIView, MGLMapViewDelegate {
         }
     }
     
+    func mapView(_ _: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        if let homeMapViewAnnotation = annotation as? HomeMapViewAnnotation {
+            return MGLAnnotationImage(image: UIImage(named: homeMapViewAnnotation.type)!, reuseIdentifier: homeMapViewAnnotation.hash.description)
+        }
+        else {
+            return nil
+        }
+    }
+    
     func mapView(_ _: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
         return 3
     }
@@ -79,10 +88,11 @@ class HomeMapView : UIView, MGLMapViewDelegate {
             .get()
             .then {
                 $0.forEach({ stand in
-                    let annotation = MGLPointAnnotation()
+                    let annotation = HomeMapViewAnnotation()
                     annotation.coordinate = stand.coordinate
                     annotation.title = stand.name
                     annotation.subtitle = "\(stand.size) plazas"
+                    annotation.type = "MarkerParking"
                     self.mapView.addAnnotation(annotation)
                 })
         }
@@ -101,8 +111,9 @@ class HomeMapView : UIView, MGLMapViewDelegate {
     
     private func setDestinationToValue(destination: CLLocationCoordinate2D) {
         if mapViewDestinationAnnotation == nil {
-            mapViewDestinationAnnotation = MGLPointAnnotation()
+            mapViewDestinationAnnotation = HomeMapViewAnnotation()
             mapViewDestinationAnnotation!.coordinate = destination
+            mapViewDestinationAnnotation!.type = "MarkerDestination"
             mapView.addAnnotation(mapViewDestinationAnnotation!)
         }
         else {

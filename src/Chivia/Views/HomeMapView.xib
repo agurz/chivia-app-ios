@@ -29,7 +29,7 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNG-me-hBb">
                     <rect key="frame" x="8" y="627" width="359" height="0.0"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1r-Zu-ega" customClass="LGButton" customModule="LGButton">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1r-Zu-ega" userLabel="Navigate Button" customClass="LGButton" customModule="LGButton">
                             <rect key="frame" x="299" y="8" width="56" height="56"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -54,7 +54,7 @@
                                 <action selector="navigateButton:" destination="-1" eventType="touchUpInside" id="eZT-i9-PeY"/>
                             </connections>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Ec-Oug" userLabel="Route Preferences View">
                             <rect key="frame" x="0.0" y="80" width="359" height="149"/>
                             <subviews>
                                 <stackView contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-rw-tu7">
@@ -143,12 +143,6 @@
                         <constraint firstItem="o1r-Zu-ega" firstAttribute="top" secondItem="s1W-si-spt" secondAttribute="top" constant="8" id="dqw-jZ-K2I"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="s1W-si-spt"/>
-                    <variation key="default">
-                        <mask key="subviews">
-                            <exclude reference="o1r-Zu-ega"/>
-                            <exclude reference="hrj-Ec-Oug"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <constraints>
@@ -161,6 +155,11 @@
                 <constraint firstItem="eNG-me-hBb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="yBG-SW-dOR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="eNG-me-hBb"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="32.5" y="67.5"/>
         </view>
     </objects>
